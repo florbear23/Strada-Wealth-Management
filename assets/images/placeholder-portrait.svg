@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" width="960" height="1200" role="img" aria-label="Photography placeholder">
+  <rect width="960" height="1200" fill="#10254A"/>
+  <g stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1">
+    <line x1="160" y1="0" x2="160" y2="1200"/>
+    <line x1="320" y1="0" x2="320" y2="1200"/>
+    <line x1="480" y1="0" x2="480" y2="1200"/>
+    <line x1="640" y1="0" x2="640" y2="1200"/>
+    <line x1="800" y1="0" x2="800" y2="1200"/>
+    <line x1="0" y1="150" x2="960" y2="150"/>
+    <line x1="0" y1="300" x2="960" y2="300"/>
+    <line x1="0" y1="450" x2="960" y2="450"/>
+    <line x1="0" y1="600" x2="960" y2="600"/>
+    <line x1="0" y1="750" x2="960" y2="750"/>
+    <line x1="0" y1="900" x2="960" y2="900"/>
+    <line x1="0" y1="1050" x2="960" y2="1050"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.32" stroke-width="2" fill="none">
+    <path d="M53 125 V53 H125"/>
+    <path d="M835 53 H907 V125"/>
+    <path d="M907 1075 V1147 H835"/>
+    <path d="M125 1147 H53 V1075"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="2" fill="none">
+    <circle cx="480" cy="600" r="43"/>
+    <line x1="398.3" y1="600" x2="426.25" y2="600"/>
+    <line x1="533.75" y1="600" x2="561.7" y2="600"/>
+    <line x1="480" y1="518.3" x2="480" y2="546.25"/>
+    <line x1="480" y1="653.75" x2="480" y2="681.7"/>
+  </g>
+</svg>

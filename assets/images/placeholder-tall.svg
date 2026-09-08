@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1320" width="900" height="1320" role="img" aria-label="Photography placeholder">
+  <rect width="900" height="1320" fill="#10254A"/>
+  <g stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1">
+    <line x1="150" y1="0" x2="150" y2="1320"/>
+    <line x1="300" y1="0" x2="300" y2="1320"/>
+    <line x1="450" y1="0" x2="450" y2="1320"/>
+    <line x1="600" y1="0" x2="600" y2="1320"/>
+    <line x1="750" y1="0" x2="750" y2="1320"/>
+    <line x1="0" y1="147" x2="900" y2="147"/>
+    <line x1="0" y1="293" x2="900" y2="293"/>
+    <line x1="0" y1="440" x2="900" y2="440"/>
+    <line x1="0" y1="587" x2="900" y2="587"/>
+    <line x1="0" y1="733" x2="900" y2="733"/>
+    <line x1="0" y1="880" x2="900" y2="880"/>
+    <line x1="0" y1="1027" x2="900" y2="1027"/>
+    <line x1="0" y1="1173" x2="900" y2="1173"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.32" stroke-width="2" fill="none">
+    <path d="M50 118 V50 H118"/>
+    <path d="M782 50 H850 V118"/>
+    <path d="M850 1202 V1270 H782"/>
+    <path d="M118 1270 H50 V1202"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="2" fill="none">
+    <circle cx="450" cy="660" r="41"/>
+    <line x1="372.1" y1="660" x2="398.75" y2="660"/>
+    <line x1="501.25" y1="660" x2="527.9" y2="660"/>
+    <line x1="450" y1="582.1" x2="450" y2="608.75"/>
+    <line x1="450" y1="711.25" x2="450" y2="737.9"/>
+  </g>
+</svg>

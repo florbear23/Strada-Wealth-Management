@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Photography placeholder">
+  <rect width="1200" height="800" fill="#10254A"/>
+  <g stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1">
+    <line x1="200" y1="0" x2="200" y2="800"/>
+    <line x1="400" y1="0" x2="400" y2="800"/>
+    <line x1="600" y1="0" x2="600" y2="800"/>
+    <line x1="800" y1="0" x2="800" y2="800"/>
+    <line x1="1000" y1="0" x2="1000" y2="800"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.32" stroke-width="2" fill="none">
+    <path d="M44 104 V44 H104"/>
+    <path d="M1096 44 H1156 V104"/>
+    <path d="M1156 696 V756 H1096"/>
+    <path d="M104 756 H44 V696"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="2" fill="none">
+    <circle cx="600" cy="400" r="36"/>
+    <line x1="531.6" y1="400" x2="555" y2="400"/>
+    <line x1="645" y1="400" x2="668.4" y2="400"/>
+    <line x1="600" y1="331.6" x2="600" y2="355"/>
+    <line x1="600" y1="445" x2="600" y2="468.4"/>
+  </g>
+</svg>
