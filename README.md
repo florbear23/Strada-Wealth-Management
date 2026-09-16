@@ -1,216 +1,183 @@
-# Strada Wealth Management — Design Prototype
+# Strada Wealth Management — Website Draft
 
-Static HTML/CSS/JS prototype for the Strada Wealth Management redesign (Phase 2, design track).
-**Nothing here is live.** No WordPress work has been done, no live site has been touched, and none of this is published.
+**Static prototype / website redesign** for Strada Wealth Management — **not** the live site.
+**Nothing here is live.** No WordPress work has been done, no live Squarespace site has been touched,
+DNS is untouched, and none of this is published. Every page in this build is a draft for internal review.
 
-## What this is
+**Technology**: plain HTML, plain CSS, vanilla JavaScript. No framework, no build step, no dependencies
+to install — the pages are the deployable artifact as-is.
 
-A front-end design system and five key-page layouts, built to review the visual direction with the
-team before any WordPress build starts. Design direction follows [studio-merge.com](https://studio-merge.com)
-and [paulkalkbrenner.net](https://paulkalkbrenner.net): oversized type, heavy negative space, a
-navy/white/black palette with no accent color, and real photography as the only source of color once
-it's added.
+## Status
+
+- **Privacy Policy** (`/privacy-policy/`) and **Disclosures** (`/disclosures/`) — draft ready for
+  internal review. See the compliance-draft and needs-Jen/needs-counsel flags on the pages themselves.
+- **Full site draft** — 17 core pages + all 55 real blog posts, ready for review.
+- Approval path for everything here: **Team QC → Jen Review → Outside Compliance Counsel Approval →
+  Publish.** Nothing in this repo has passed that path, and nothing should be published from here
+  directly — nginx/WordPress migration is a separate, later step.
+
+## Responsive breakpoints
+
+Fluid layout throughout (most sizing uses `clamp()`), verified with a full QA sweep at:
+
+| Breakpoint | Target |
+| --- | --- |
+| 375px | Mobile |
+| 768px | Tablet |
+| 1024px | Small desktop / laptop |
+| 1440px | Desktop |
+
+No horizontal overflow at any of the four, confirmed across every page in the current build
+(see `FINAL-QA-REPORT.md`).
 
 ## How to preview
 
-Requires Node (for `npx serve`).
+**Easiest**: just open [index.html](index.html) directly in a browser — every page, and every internal
+link between pages, works from the filesystem with no server needed, no directory-listing dead ends.
+All internal links and asset paths are same-site-relative (computed per page depth at build time — see
+`write()` in the generator scripts), not root-relative, and every navigation link explicitly points at
+`index.html` rather than a bare folder — a bare-folder link (`/services/`) resolves fine under a real
+HTTP server, but opened directly as `file://` it shows the OS/browser's raw directory listing instead of
+the page, since `file://` has no server-side "serve index.html for this folder" behavior.
+
+**Or**, to preview with clean nested URLs (`/about` instead of `/about/index.html`) the way the live
+site would eventually serve them:
 
 ```bash
-npx serve -l 4210 .
+node .claude/serve.js
 ```
 
-Then open `http://localhost:4210`. Or open `index.html` directly in a browser — there's no build step
-and no fetch-based includes, so it also works from the filesystem.
+Then open `http://localhost:4210`. Both ways of viewing this site use the exact same files — nothing
+is duplicated or server-only.
+
+## Design system — Premium Navy & Gold (2026-09-18 pivot)
+
+Adapted from a premium legal-services design reference into finance-appropriate equivalents — same
+overall design/layout/visual style (predominantly dark, gold-accented, photography-forward, stat strips,
+icon-grid service blocks), but law-specific elements (gavel/courtroom imagery, a multi-lawyer "Meet the
+Team" carousel) were translated rather than copied literally: real Strada photography replaces generic
+legal stock, and a single-principal spotlight replaces the team carousel, since Strada is a solo-principal
+RIA, not a multi-attorney firm. Supersedes the earlier "Modern Editorial Financial Planning" system below.
+
+- **Type**: Fraunces (serif, headings) + Public Sans (body/UI) — unchanged, still moderate scale.
+- **Color**: Ink `#121C26` (deep navy — dark surfaces, text-on-light), Slate `#1B2A38` (navy section bg),
+  Gold `#B8985A` (the one accent — primary buttons, the underline `.mark`, section-index numerals, the
+  `.icon-card` hover edge), Parchment `#F2ECDD`, Paper `#FBF9F4`, Border `#E2DAC4`, Muted `#5C5646`.
+- **New components** (`css/style.css`, appended under "NAVY & GOLD"): `.stat-strip` (factual, non-
+  performance identity numbers only — years in practice, certifications held, practice areas; never
+  outcomes/results, which would be a compliance violation), `.icon-card-grid` (numbered-circle service
+  blocks on a dark section), `.principal-spotlight` (single-principal profile — the finance-appropriate
+  translation of the reference's multi-lawyer team carousel).
+- Tokens live in `css/base.css` under `:root`. The legacy alias layer (`--navy-900`, `--white`, `--paper`,
+  etc.) maps variable names from the *original* pre-Step-5 navy/black system onto whatever palette is
+  current, so the
+  component library in `css/style.css` didn't need a line-by-line rewrite. If you're extending the
+  system, prefer the new `--color-*` names going forward.
 
 ## Structure
 
 ```
 stradamanagement/
-├── index.html          Home
-├── about.html           About / Jennifer Failla
-├── services.html        Services (Life Transitions, Divorce & Marital Matters, Professional Partners)
-├── faq.html              FAQ, grouped into 4 categories
-├── contact.html          Contact form + booking placeholder
-├── css/
-│   ├── base.css          Tokens (color/type/space), reset, typography scale, section
-│   │                      surfaces, scroll-reveal, layout primitives
-│   └── style.css         Components: header/nav, mobile nav, buttons, masthead hero,
-│                          running heads, statement blocks, service rows, editorial
-│                          spreads, process ledger, FAQ ledger, mega CTA, feature +
-│                          credential table, photography, compliance-draft flag, forms,
-│                          footer with wordmark lockup
-├── js/
-│   └── main.js            Header scroll state, mobile nav toggle, FAQ accordion,
-│                           contact form validation (client-side only), scroll reveal
-│                           (IntersectionObserver), footer year
-├── assets/images/         SVG photography placeholders (square / portrait / tall /
-│                           landscape / wide / panorama / slab)
-└── .claude/serve.js       Dependency-free preview server (port 4210)
+├── index.html                              /
+├── about/index.html                        /about
+├── services/index.html                     /services            (hub)
+├── services/financial-planning/index.html  /services/financial-planning
+├── services/collaborative-divorce/index.html /services/collaborative-divorce
+├── for-attorneys/index.html                /for-attorneys
+├── consultation/index.html                 /consultation         (primary "Book a Consultation" CTA target)
+├── contact/index.html                      /contact              (general contact info, distinct from /consultation)
+├── faq/index.html                          /faq                  (hub)
+├── faq/financial-planning/index.html       /faq/financial-planning
+├── faq/divorce-and-marital-matters/index.html /faq/divorce-and-marital-matters
+├── faq/collaborative-divorce/index.html    /faq/collaborative-divorce
+├── faq/for-attorneys/index.html            /faq/for-attorneys
+├── blog/index.html                         /blog                 (index of all 55 real posts)
+├── blog/[post-slug]/index.html             /blog/[post-slug]     (55 real posts — real title/date/body,
+│                                                                   see Content status below for risk flags)
+├── privacy-policy/index.html               /privacy-policy       ← priority deliverable
+├── disclosures/index.html                  /disclosures
+├── client-prep/index.html                  /client-prep          (stub — pending Jen approval, not in nav/footer)
+├── css/base.css                            Design tokens, reset, typography, section-surface system
+├── css/style.css                           All components (see table below)
+├── js/main.js                              Nav, FAQ accordion, scroll reveal, form validation
+├── assets/images/
+│   ├── logo/                               Strada logo files (downloaded, kept for reference — not
+│   │                                        currently used in the header; see Design system above)
+│   ├── team/                               Jennifer Failla's real current portrait
+│   ├── general/                            Real Austin skyline + collaborative-divorce photos
+│   ├── blog/                               28 real blog-post featured images (of 55 posts)
+│   └── placeholder-*.svg                   Flat aspect-ratio placeholders, used where no real photo
+│                                            exists yet (Unsplash URLs elsewhere are also temporary)
+├── .gitignore
+├── README.md                               This file
+└── .claude/serve.js                        Optional preview server — resolves nested clean URLs to
+                                             index.html; not required to view the site (see below)
 ```
 
-### Section system
+Two internal working documents — a per-page source inventory and a full migration/QA report — exist in
+this project folder but are intentionally excluded from version control via `.gitignore` (compliance
+audit notes and open legal questions aren't meant for the shared repo). Ask the project owner for a copy
+if you need the full audit trail behind the summary below.
 
-Every major section is built from the same small set of editorial devices, so the page has a
-consistent rhythm and the WordPress conversion has a clear component inventory:
+All internal links and asset references are **relative, computed per page depth** at build time
+(`./css/base.css` at the root, `../../css/base.css` two levels down, etc.) — not root-relative. That's
+deliberate: root-relative paths (`/css/base.css`) only resolve under `http(s)://`, so opening any page
+directly as a `file://` URL would silently fail to load every stylesheet, script, and internal link.
+This build works identically either way.
 
-| Component | Where it's used |
+### Component reference
+
+| Component | Where |
 | --- | --- |
-| `.running-head` | Numbered hairline running head at the top of every section |
-| `.hero` + `.hero__slab` | Home masthead — photography set inline into the headline |
-| `.statement-block` | Oversized positioning copy with a rotated edge label |
-| `.srv-row` | Home services — full-width rows that invert and reveal a photo on hover |
-| `.spread` | Services page — asymmetric image/text spreads with oversized outlined index numerals |
-| `.ledger` | Process / getting-started steps, oversized outlined numerals, alternating indent |
-| `.faq-block` + `.faq-list` | FAQ — sticky category label beside numbered questions |
-| `.note-block` | Compliance-gated sections: heading beside a flagged draft note |
-| `.feature` + `.credential-table` | About — practitioner feature and credential ledger |
-| `.cta` + `.link-xl` | Closing CTA on every page |
-| `.footer-mark` | Oversized tonal wordmark lockup in the footer |
-| `.media-panel` | Photograph with a navy card breaking its lower edge (home, Position) |
-| `.panel` | Contained navy panel, copy one side / photography flush to the edge (home, Approach) |
-| `.mosaic` | Mixed-crop photography grid (About, Philosophy) |
-| `.section-lead` | Two-part heading with supporting copy set opposite |
-| `.photo__overlay` | Caption bar set into the lower-left of a photograph |
-| `.tone-2` | Second line of a headline, stepped down in tone |
+| `.stat-strip` | Homepage, Services hub — factual identity numbers only, never performance claims |
+| `.icon-card-grid` | Homepage, Services hub — numbered service blocks on a dark section |
+| `.principal-spotlight` | Homepage — Jennifer's profile (finance-appropriate translation of a multi-lawyer team grid) |
+| `.card` / `.card-grid` | For Attorneys partner cards, FAQ hub |
+| `.blog-card` | Blog index (55 real posts) |
+| `.article-header` / `.article-body` | Every blog post page |
+| `.policy-layout` / `.policy-toc` / `.policy-section` | Privacy Policy, Disclosures |
+| `.frozen-copy` | Existing legal language / FROZEN blog posts, quoted verbatim, not reworded |
+| `.compliance-draft` | Anything needing Jen or outside counsel |
+| `.conflict-flag` | Used once — the Florida/Texas registration conflict on `/disclosures/` |
+| `.spread`, `.ledger`, `.credential-table`, `.mosaic`, `.panel`, `.media-panel` | Carried over from earlier design passes; restyled to the current palette |
 
-No template partials/includes — header and footer markup is duplicated per page (same pattern used
-on this team's other static prototypes). This keeps the prototype dependency-free and makes the
-WordPress conversion mechanical: header → `header.php`, footer → `footer.php`, each section already
-maps cleanly to an ACF block or template part.
+## Content status
 
-## Design system
+The full migration and QA record lives in the (local-only, gitignored) `FINAL-QA-REPORT.md` and
+`CONTENT-INVENTORY.md`. Summary:
 
-- **Type**: Archivo (display/headlines, weight 500–600) + Inter (body/UI). Both loaded via Google Fonts.
-  Grotesque only — no serif. The scale is deliberately restrained: headings stay prominent through
-  weight, spacing and position rather than size, so the site reads as a professional firm rather than
-  an editorial portfolio. At 1440px: body 17px, lede 19px, h3 21px, section h2 36px, hero 66px.
-  Every step is fluid via `clamp()` and holds its hierarchy down to 375px (hero 36px, body 17px).
-- **Color**: navy (`--navy-900` / `--navy-950`), black, white, plus tints of those three (an off-white
-  "paper" and a tonal navy) for section alternation. No accent hue, no gradients, no rounded corners.
-- **Motifs borrowed from the reference sites**: photography set inline into the hero headline
-  (Kalkbrenner), numbered running heads and rotated edge labels, oversized outlined numerals,
-  hairline ledgers instead of cards, full-width hover-invert rows (Studio Merge), and an oversized
-  wordmark lockup closing the footer.
-- **Rhythm**: sections alternate white → paper → white → navy/black so no two adjacent sections
-  share a ground, and each one leads with a numbered running head.
-- **Motion**: one restrained scroll-reveal (18px rise + fade, staggered within a group) via
-  IntersectionObserver, plus hover transitions on rows, links and photography. All of it is disabled
-  under `prefers-reduced-motion`. No animation libraries.
-## Content and photography
+**Migrated from the live site** (wording preserved, restructured into the new IA): homepage
+positioning, About/Jennifer bio and credentials, all three service tracks, all **79 real FAQ answers**
+across four categories (corrected up from an earlier undercount of 34), contact details, the full
+Privacy Disclosure Document (split into Privacy Policy + Disclosures), and the **entire real 55-post
+blog archive** — verified against the live sitemap as the complete set (the sitemap's other ~78 URLs
+are `/blog/tag/...` archive pages, not additional posts).
 
-**Content** is migrated from the live Squarespace site (stradamanagement.com), crawled read-only via
-its sitemap. Source pages: `/`, `/about`, `/what-we-do`, `/strategic-wealth-planning`,
-`/collaborative-law-financial-neutral`, `/attorney-services`, `/contact`, and the four FAQ libraries
-(`/financial-planning-faq`, `/divorce-marital-matters-faq`, `/collaborative-law-faqs`,
-`/attorney-services-faq`). The FAQ page reproduces all four libraries — this is the "four FAQ
-libraries" referenced in the original scoping brief.
+**Real images migrated** (not stock): Jennifer Failla's current headshot, the Strada logo files, a real
+Austin skyline photo and a collaborative-divorce candid photo from the live site, and 28 of the 55 blog
+posts' real featured images. The remaining 27 posts had no distinct featured image on the live site and
+use a placeholder. 13 Unsplash images remain as clearly-temporary photography elsewhere on the site.
+**Note**: 6 of the 28 real blog images are byte-identical to each other (confirmed via hash check) — the
+live site had no distinct featured image for those 6 older posts, so its `og:image` fallback resolved to
+the same generic author photo for all of them. Real, not corrupted, just not 6 distinct photos.
 
-Anything on the live site that is compliance-sensitive was **not** carried over as finished copy. It is
-summarised inside a `.compliance-draft` block instead, attributed to the live site and marked as
-requiring outside counsel review. That covers: fee-only status, fiduciary language, plan pricing
-($3,000–$5,800), the flat-fee retainer model, asset minimums, custody, "complimentary" consultations,
-the "Proven System" descriptor on PlanThruDivorce™, comparative/superiority claims, and all awards.
+**Not migrated — flagged, not invented:**
+- Fees, minimums, custody, fiduciary status, "fee-only" — every instance is a `.compliance-draft` block.
+- PlanThruDivorce™ / "Proven System" — frozen, confirmed live and public on `/for-attorneys`.
+- Awards (Tzaddik Award, Hymie & Louise Samuelson Leadership Award), speaking, testimonials — withheld
+  per the SEC Marketing Rule.
+- Florida registration language — carried forward verbatim in a `.conflict-flag`, not resolved. See
+  `/disclosures/`.
+- 6 blog posts are FROZEN (a real court case, a third-party investment offer, two performance-claim
+  posts, and one naming real politicians) and 14 more are compliance-draft-flagged — see
+  FINAL-QA-REPORT.md Section 4 for the full breakdown. No article was rewritten or deleted.
 
-**Photography** is temporary Unsplash imagery, hotlinked from `images.unsplash.com` with sizing
-parameters, subject-matched per section (a two-person conversation in the homepage hero, Austin for
-place, mature-couple imagery for retirement and life transitions, collaborative office for professional
-partners, document/desk for the working-method panel). Every one carries a visible "Temporary image —
-Unsplash" tag. Replace with licensed Strada photography before launch.
+## What remains before WordPress
 
-The homepage hero is a full-bleed background photograph (`.hero__bg`) with the copy over it. The hero
-flips to a dark ink context via its own `--ink` / `--ink-muted` / `--line` overrides, so headline, lede,
-meta and credentials all invert together; the CTAs switch to `.btn--light` and `.btn--outline-light`.
-
-Legibility is handled with a **flat** navy scrim (`rgba(10,24,48,0.72)`), not a gradient. That caps the
-brightest possible pixel behind the copy at roughly `rgb(79,89,106)`, which keeps the headline at ~7:1
-and the lede at ~5:1 contrast regardless of which photograph is swapped in — worth preserving if the
-image changes, since this page carries regulated content.
-
-The dark context is scoped to `.hero`, which exists only on `index.html`. Inner pages use `.page-hero`
-and are unaffected.
-
-Jennifer's portrait is the one gap: her approved headshot is published on the live site but the
-Squarespace CDN blocks hotlinking, and it could not be downloaded from this environment. Rather than
-substitute a stock model on a page headed with her name, that slot uses the navy placeholder labelled
-"Approved portrait required."
-
-- **Legacy placeholders**: `assets/images/placeholder-*.svg` still mark every spot a real
-  photo goes, in the aspect ratio that spot needs. Swap the `src` when real photography is ready —
-  everything else (crop, treatment, caption) is already wired up.
-- **Compliance-draft component** (`.compliance-draft`): a dashed-border, tagged box used everywhere
-  the copy touches a compliance-sensitive claim. See below — this is the important part.
-
-## Compliance-sensitive placeholders used
-
-Per the brief, nothing below is invented or finalized. Every instance is visually flagged in the
-prototype with a "Draft — Compliance Review Required" tag so it can't be mistaken for finished copy:
-
-- **Fees / engagement model** — Home, Services, and the footer disclosures column. The current live
-  site states a flat-fee model with no asset minimums and no custody requirements; that language is
-  referenced as-is for continuity but is **not** carried forward as finalized copy — it needs outside
-  counsel's sign-off before it's restated anywhere on the new site.
-- **Fiduciary / registration status** — About (Regulatory Status section) and footer disclosures.
-- **Testimonials / case outcomes** — Home ("What clients say"). Left as a placeholder with a note on
-  the SEC Marketing Rule's disclosure requirements for testimonials and endorsements; no quotes,
-  names, or results are fabricated.
-- **Office address / phone number** — Contact page and footer. Placeholder-bracketed rather than
-  reusing the phone number found in internal email correspondence, since it wasn't confirmed as the
-  intended public business line.
-- **Out-of-state service availability** — FAQ ("Do you work with clients outside Texas?"), since that
-  depends on registration status.
-- **Engagement timelines** — FAQ. No duration is stated; nothing verified backs a specific number.
-
-The word "referral" does not appear anywhere in this prototype, per the standing instruction from the
-account team — "right fit" / "mutual fit" is used instead. No performance claims, return figures,
-guarantees, awards, ratings, or "safe"/"secure" language were used either, including in places where
-the current live site uses adjacent language (e.g., "a secure future").
-
-## Design decisions that need Jen's approval
-
-1. **Service taxonomy** — Services are organized under the three categories from the current live site
-   (Life Transitions / Divorce & Marital Matters / Professional Partners), with QDRO, financial-neutral,
-   collaborative-divorce, and community-property work nested under "Divorce & Marital Matters" rather
-   than broken out as top-level services. Worth confirming this matches what Phase 1 decided, if
-   anything was already decided there.
-2. **Hero headline** — Reuses "Plan While You Can / Not When You Have To" from the current live site,
-   since it already fits the new tone. Confirm Jen is fine carrying it into the redesign rather than
-   replacing it.
-3. **FAQ grouping into four categories** — Getting Started / Divorce Financial Planning & QDROs /
-   Working With Strada / Fees & Engagement. This is inferred to match "four FAQ libraries" mentioned in
-   scoping; the actual current FAQ content wasn't re-audited for this pass (see below).
-4. **Wordmark** — Header/footer use a plain text "Strada" wordmark. The real logo files exist (per the
-   #strada-wealth-management Slack channel) but weren't available to drop in here — swap in the real
-   mark before this goes further.
-5. **Navigation** — Services / FAQ / About / Contact, no Blog/Insights link. The live site has a Blog
-   link; it's left out here rather than pointing it at a page that doesn't exist yet.
-
-## What this pass could NOT verify
-
-This design/prototype pass did not have access to the actual **Phase 1 audit, Open Issues log, freeze
-list, redirect map, or Phase 2 checklist** — those were produced in a separate session (referenced in
-Slack as already complete) that this session couldn't reach. Content used here is grounded in:
-- the #strada-wealth-management Slack scoping thread (compliance rules, design references, "three
-  rules that never bend"),
-- a light read-only look at the current live site's homepage copy and nav (no full crawl — that was
-  Phase 1's job),
-- email correspondence confirming Jennifer's name, credentials, and firm name.
-
-Before this moves into WordPress, someone should cross-check this prototype against the actual Phase 1
-deliverables (especially the redirect map and any IA that was already approved) to make sure nothing
-here conflicts. It's entirely possible some of the "decisions that need Jen's approval" above were
-already decided in Phase 1 — this pass just didn't have that document to check against.
-
-## What remains before this becomes WordPress
-
-- Outside counsel's compliance review process is still being established (per the 2026-09-08 Slack
-  thread) — every `.compliance-draft` block in this prototype is blocked on that.
-- Real photography (the design leans on it as the primary color source — placeholders won't read as
-  finished until it's swapped in).
-- Real logo files.
-- Confirmed office contact details and a scheduling-tool link for "Book Now."
-- The content inventory from Phase 1 (FAQ libraries, blog archive, two practitioner PDFs) mapped into
-  these templates.
-- Cross-check against the redirect map so URL structure in WordPress doesn't break anything Phase 1
-  already accounted for.
-- A Blog/Insights template (out of scope for this pass — the current five pages were chosen to
-  demonstrate the design system, not to cover every page on the live site).
+- Outside counsel's review process is still the blocker for every compliance-draft and frozen block.
+- The Florida/Texas registration conflict needs to be resolved against current Form ADV.
+- The missing cookie/analytics disclosure section needs counsel-approved language (doesn't exist on the
+  live site at all).
+- Confirmation of the SMS program's contact details (phone/email mismatch — see Privacy Policy).
+- Jen's confirmation on the Griffin third-party investment blog post — possible content-ownership issue.
+- The real 5 questions on `/client-prep` (inside an embedded form, not recoverable by page-fetching).

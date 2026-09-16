@@ -155,22 +155,24 @@ body.nav-open { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 1rem 1.75rem;
+  padding: 0.9rem 1.6rem;
+  font-family: var(--font-body);
   font-size: 0.9375rem;
   font-weight: 600;
   border: 1.5px solid transparent;
-  border-radius: 0;
-  transition: background-color 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+  border-radius: 3px;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.btn--primary { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
-.btn--primary:hover { background: var(--navy-950); border-color: var(--navy-950); }
-.btn--outline { color: var(--navy-900); border-color: var(--line-on-light); }
-.btn--outline:hover { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
-.btn--light { background: var(--white); color: var(--navy-950); border-color: var(--white); }
-.btn--light:hover { background: transparent; color: var(--white); }
+/* Primary action carries the one accent color, deliberately — everything else is neutral. */
+.btn--primary { background: var(--color-clay); color: var(--color-paper); border-color: var(--color-clay); }
+.btn--primary:hover { background: var(--color-clay-dark); border-color: var(--color-clay-dark); }
+.btn--outline { color: var(--color-ink); border-color: var(--color-border); }
+.btn--outline:hover { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+.btn--light { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); }
+.btn--light:hover { background: transparent; color: var(--color-paper); }
 /* Secondary action on dark grounds and over photography */
-.btn--outline-light { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.8); }
-.btn--outline-light:hover { background: var(--white); color: var(--navy-950); border-color: var(--white); }
+.btn--outline-light { background: transparent; color: var(--color-paper); border-color: rgba(251, 249, 245, 0.8); }
+.btn--outline-light:hover { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); }
 .btn--block { width: 100%; justify-content: center; }
 
 /* Oversized editorial text link — primary CTA style on big sections */
@@ -214,7 +216,7 @@ body.nav-open { overflow: hidden; }
 }
 .running-head__num {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--size-meta);
   letter-spacing: 0.1em;
   color: var(--ink);
@@ -324,8 +326,36 @@ body.nav-open { overflow: hidden; }
 
 /* ==========================================================================
    PAGE HERO — inner pages
+   Full-bleed dark navy band with a gold top rule, consistent across every
+   inner page — the same opening tone as the homepage's photo hero, without
+   requiring a bespoke photo per page.
    ========================================================================== */
-.page-hero { padding-top: clamp(3rem, 7vw, 6rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+.page-hero {
+  padding-top: clamp(2.75rem, 6vw, 5rem);
+  padding-bottom: clamp(2.75rem, 5.5vw, 4.5rem);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  --ink: var(--ink-on-dark);
+  --ink-muted: var(--ink-on-dark-muted);
+  --line: var(--line-on-dark);
+  --line-faint: var(--line-on-dark-faint);
+  border-top: 3px solid var(--color-clay);
+  position: relative;
+}
+.page-hero .hero__meta span:first-child { color: var(--color-clay); }
+.page-hero .tone-2 { color: rgba(251, 249, 245, 0.6); }
+.page-hero .mark { color: #D9BE8C; background-image: linear-gradient(#D9BE8C, #D9BE8C); }
+
+/* Blog-post variant: real featured photo as the hero background, same band
+   otherwise — used where a post has real photography from the live site. */
+.page-hero--photo { background-size: cover; background-position: center; }
+.page-hero--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18, 28, 38, 0.62) 0%, rgba(18, 28, 38, 0.92) 100%);
+}
+.page-hero--photo > .container { position: relative; z-index: 1; }
 .page-hero__title { margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
 .page-hero__foot {
   display: grid;
@@ -398,7 +428,7 @@ body.nav-open { overflow: hidden; }
 }
 .srv-row__num {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--size-meta);
   letter-spacing: 0.1em;
   color: var(--ink-muted);
@@ -585,7 +615,7 @@ body.nav-open { overflow: hidden; }
 .faq-item__q:hover { padding-left: 0.5rem; }
 .faq-item__marker {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--size-meta);
   letter-spacing: 0.1em;
   color: var(--ink-muted);
@@ -918,7 +948,7 @@ body.nav-open { overflow: hidden; }
 .field label::before {
   content: attr(data-index);
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ink);
 }
 .field input, .field textarea, .field select {
@@ -998,3 +1028,237 @@ body.nav-open { overflow: hidden; }
   font-size: 0.8125rem;
   color: var(--ink-on-dark-muted);
 }
+
+/* ==========================================================================
+   CARD — generic bordered card (services hub, FAQ hub, consultation steps)
+   ========================================================================== */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  background: var(--color-paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.card:hover { border-color: var(--color-clay); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(30,37,48,0.06); }
+.card__eyebrow { margin-bottom: 0.75rem; }
+.card__title { margin-bottom: 0.65rem; }
+.card__text { color: var(--ink-muted); font-size: var(--size-small); flex-grow: 1; }
+.card__link { display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1.25rem; font-weight: 600; font-size: 0.9375rem; color: var(--color-clay); }
+.card__link .arrow { transition: transform 0.3s var(--ease); }
+.card:hover .card__link .arrow { transform: translateX(4px); }
+.card-grid { display: grid; gap: clamp(1.25rem, 2.5vw, 1.75rem); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .card-grid--2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 860px) { .card-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 860px) { .card-grid--4 { grid-template-columns: repeat(4, 1fr); } }
+
+/* ==========================================================================
+   BLOG — index cards and article layout
+   ========================================================================== */
+.blog-card { display: flex; flex-direction: column; height: 100%; }
+.blog-card__media { aspect-ratio: 3 / 2; margin-bottom: 1.25rem; }
+.blog-card__meta { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.6rem; }
+.blog-card__title { margin-bottom: 0.6rem; }
+.blog-card__title a::after { content: ""; position: absolute; inset: 0; }
+.blog-card__title a { position: relative; }
+.blog-card__excerpt { color: var(--ink-muted); font-size: var(--size-small); }
+.blog-card__status {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  background: var(--draft-bg);
+  border: 1px dashed var(--draft-border);
+  padding: 0.3em 0.6em;
+  border-radius: 3px;
+}
+
+.article-header { max-width: 42rem; }
+.article-header .meta { margin-bottom: 1rem; }
+.article-body { max-width: 42rem; }
+.article-body > * + * { margin-top: 1.35em; }
+.article-body h2 { font-size: var(--size-h2); margin-top: 2.25em; margin-bottom: 0.6em; }
+.article-body h3 { margin-top: 1.75em; margin-bottom: 0.5em; }
+.article-body p { color: var(--color-ink); line-height: 1.75; }
+.article-body ul { list-style: disc; padding-left: 1.4em; }
+.article-body ul li + li { margin-top: 0.5em; }
+
+/* ==========================================================================
+   POLICY DOCUMENT — Privacy Policy / Disclosures layout
+   ========================================================================== */
+.policy-layout { display: grid; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
+@media (min-width: 900px) {
+  .policy-layout { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); }
+  .policy-toc { position: sticky; top: 6.5rem; }
+}
+.policy-toc__label { margin-bottom: 1rem; }
+.policy-toc ol { display: flex; flex-direction: column; gap: 0.6rem; counter-reset: policy-toc; }
+.policy-toc li { counter-increment: policy-toc; }
+.policy-toc a {
+  display: flex;
+  gap: 0.6em;
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  transition: color 0.25s var(--ease);
+}
+.policy-toc a::before { content: counter(policy-toc, decimal-leading-zero); font-weight: 600; color: var(--color-clay); flex: none; }
+.policy-toc a:hover { color: var(--color-ink); }
+
+.policy-section { max-width: 60ch; }
+.policy-section + .policy-section {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line);
+}
+.policy-section__num { display: block; margin-bottom: 0.75rem; }
+.policy-section h2 { margin-bottom: 1rem; }
+.policy-section p { color: var(--color-ink); }
+.policy-section p + p { margin-top: 1em; }
+.policy-section ul { list-style: disc; padding-left: 1.3em; color: var(--color-ink); }
+.policy-section ul li + li { margin-top: 0.5em; }
+.policy-section .compliance-draft { max-width: none; }
+
+/* Frozen existing copy — legally significant, not to be reworded here */
+.frozen-copy {
+  position: relative;
+  border-left: 3px solid var(--color-slate);
+  background: rgba(51, 69, 90, 0.05);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+.frozen-copy__tag {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin-bottom: 0.6rem;
+}
+.frozen-copy p { font-size: var(--size-small); color: var(--color-ink); font-style: italic; }
+.frozen-copy p + p { margin-top: 0.75em; }
+
+/* Explicit conflict callout — used once, for the Florida/Texas registration mismatch */
+.conflict-flag {
+  border: 1.5px dashed #B3261E;
+  background: rgba(179, 38, 30, 0.05);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1rem;
+}
+.conflict-flag__tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #B3261E;
+  margin-bottom: 0.6rem;
+}
+.conflict-flag p { font-size: var(--size-small); color: var(--color-ink); }
+
+/* ==========================================================================
+   NAVY & GOLD — new components for the 2026-09-18 design pivot
+   ========================================================================== */
+
+/* ---- Stat strip: factual, non-performance identity numbers (years in
+   practice, credentials held, practice areas) — never outcomes or results. ---- */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+}
+@media (min-width: 700px) { .stat-strip { grid-template-columns: repeat(4, 1fr); } }
+.stat-strip__item { border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.stat-strip__num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 600;
+  color: var(--color-clay);
+  line-height: 1;
+  display: block;
+}
+.stat-strip__label {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: var(--size-small);
+  color: var(--ink-muted);
+}
+
+/* ---- Icon service cards: icon + title + text, bordered, gold hover edge ---- */
+.icon-card-grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (min-width: 700px) { .icon-card-grid { grid-template-columns: repeat(3, 1fr); } }
+.icon-card {
+  background: var(--surface, var(--color-paper));
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  position: relative;
+  transition: background-color 0.3s var(--ease);
+}
+.section--dark .icon-card, .section--navy .icon-card { background: var(--color-slate); }
+.icon-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+.icon-card:hover::before { transform: scaleX(1); }
+.icon-card__icon {
+  width: 2.75rem; height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-clay);
+  color: var(--color-clay);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+}
+.icon-card__title { font-size: var(--size-h3); font-weight: 600; margin-bottom: 0.6rem; }
+.icon-card__text { color: var(--ink-muted); font-size: var(--size-small); }
+
+/* ---- Principal spotlight: single-principal alternative to a multi-lawyer
+   team carousel — one real photo, credentials as a gold-ruled list. ---- */
+.principal-spotlight {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+@media (min-width: 860px) { .principal-spotlight { grid-template-columns: 0.85fr 1.15fr; } }
+.principal-spotlight__media { position: relative; }
+.principal-spotlight__media::after {
+  content: "";
+  position: absolute;
+  inset: 0.9rem -0.9rem -0.9rem 0.9rem;
+  border: 1px solid var(--color-clay);
+  z-index: -1;
+}
+.principal-spotlight__creds {
+  list-style: none;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.principal-spotlight__creds li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 1rem;
+  font-size: var(--size-small);
+}
+.principal-spotlight__creds strong { color: var(--color-clay); font-family: var(--font-display); min-width: 4.5rem; }
+
+/* ---- Gold rule / divider ---- */
+.rule-gold {
+  width: 3.5rem;
+  height: 2px;
+  background: var(--color-clay);
+  border: 0;
+  margin-block: 1.5rem;
+}
+.conflict-flag p + p { margin-top: 0.6em; }
