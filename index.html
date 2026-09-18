@@ -18,9 +18,16 @@
     <a href="./index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="./services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="./services/financial-planning/index.html">Financial Planning</a>
+              <a href="./services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="./for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="./faq/index.html">FAQ</a></li>
         <li><a href="./blog/index.html">Blog</a></li>
         <li><a href="./about/index.html">About</a></li>
         <li><a href="./contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="./index.html" aria-current="page"><span>01</span>Home</a></li>
-      <li><a href="./services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="./services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="./services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="./for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="./faq/index.html"><span>04</span>FAQ</a></li>
-      <li><a href="./blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="./about/index.html"><span>06</span>About</a></li>
-      <li><a href="./contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="./blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="./about/index.html"><span>05</span>About</a></li>
+      <li><a href="./contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -57,21 +71,21 @@
 
   <section class="hero">
     <figure class="hero__bg">
-      <img src="./assets/images/general/austin-town-lake-skyline.webp" alt="Austin, Texas skyline from Lady Bird Lake" fetchpriority="high">
+      <img class="tone-muted" src="./assets/images/general/austin-town-lake-skyline.webp" alt="Austin, Texas skyline from Lady Bird Lake" fetchpriority="high">
     </figure>
     <div class="container hero__inner">
-      <div class="hero__meta">
+      <div class="hero__meta hero-in" style="animation-delay:0ms;">
         <span>Strada Wealth Management</span>
         <span>Austin, Texas</span>
       </div>
       <div class="hero__copy">
-        <h1 class="hero__title type-hero">Plan While You Can</h1>
-        <p class="hero__sub">Not when you have to.</p>
+        <h1 class="hero__title type-hero hero-in" style="animation-delay:90ms;">Plan While You Can</h1>
+        <p class="hero__sub hero-in" style="animation-delay:150ms;">Not when you have to.</p>
         <div class="hero__foot">
-          <p class="lede">The biggest financial decisions in life — retirement, divorce, college, aging parents — don't come with do-overs. We help you make them early, clearly, and on your terms.</p>
-          <div class="hero__actions">
+          <p class="lede hero-in" style="animation-delay:240ms;">The biggest financial decisions in life — retirement, divorce, college, aging parents — don't come with do-overs. We help you make them early, clearly, and on your terms.</p>
+          <div class="hero__actions hero-in" style="animation-delay:300ms;">
             <a href="./consultation/index.html" class="btn btn--light">Book a Consultation</a>
-            <a href="./services/index.html" class="btn btn--outline-light">What We Do</a>
+            <a href="#services" class="btn btn--outline-light">What We Do</a>
           </div>
         </div>
       </div>
@@ -98,19 +112,19 @@
 
   <section class="section section--paper" id="position">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">01</span>
         <span class="running-head__label">Position</span>
         <span class="running-head__rule"></span>
         <span class="running-head__end">Clients &amp; counsel</span>
       </div>
-      <div class="media-panel" data-reveal>
-        <figure class="photo photo--panorama photo--zoom">
-          <img src="https://images.unsplash.com/photo-1559234938-b60fff04894d?w=2000&amp;q=80&amp;auto=format&amp;fit=crop" alt="A couple walking together outdoors" loading="lazy">
+      <div class="media-panel" data-reveal-group>
+        <figure class="photo photo--panorama photo--zoom tone-grain bleed-full" data-reveal>
+          <img class="tone-bw" src="https://images.unsplash.com/photo-1559234938-b60fff04894d?w=2000&amp;q=80&amp;auto=format&amp;fit=crop" alt="A couple walking together outdoors" loading="lazy">
           <figcaption class="photo__tag">Temporary image — Unsplash</figcaption>
           <figcaption class="photo__overlay"><span class="photo__overlay-label">Clients &amp; counsel</span><span class="photo__overlay-meta">Fig. 01</span></figcaption>
         </figure>
-        <div class="media-panel__card">
+        <div class="media-panel__card" data-reveal>
           <span class="meta">Who we work with</span>
           <p class="type-statement">Decisions where timing, structure, and long-term impact <span class="mark">matter</span>.</p>
           <p class="media-panel__support">We work with individuals, families, and professionals facing financial decisions where timing, structure, and long-term impact matter. Whether you are planning ahead or responding to change, we bring structure, analysis, and accountability to decisions that shape your future.</p>
@@ -121,31 +135,40 @@
 
   <section class="section section--navy" id="services">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">02</span>
         <span class="running-head__label">What we do</span>
         <span class="running-head__rule"></span>
         <span class="running-head__end">Three practices</span>
       </div>
-      <div class="section-lead">
+      <div class="section-lead" data-reveal>
         <h2 class="type-h2">Major financial decisions<br><span class="tone-2">that require structure.</span></h2>
         <p class="section-lead__support">We specialize in demystifying the complexities that surround significant financial and family transitions — particularly those involving marital change.</p>
       </div>
-      <div class="icon-card-grid" data-reveal-group style="margin-top:clamp(2.5rem,5vw,3.5rem);">
-        <a class="icon-card" href="./services/financial-planning/index.html" data-reveal>
-          <span class="icon-card__icon" aria-hidden="true">01</span>
-          <h3 class="icon-card__title">Financial &amp; Retirement Planning</h3>
-          <p class="icon-card__text">Major financial decisions that require structure and clarity — retirement, elder care and support, job loss, disability, and the planning that surrounds them.</p>
+      <div class="srv-list" data-reveal-group style="margin-top:clamp(2.5rem,5vw,3.5rem);">
+        <a class="srv-row" href="./services/financial-planning/index.html" data-reveal>
+          <span class="srv-row__num">01</span>
+          <span>
+            <span class="srv-row__title">Financial &amp; Retirement Planning</span>
+            <span class="srv-row__text">Major financial decisions that require structure and clarity — retirement, elder care and support, job loss, disability, and the planning that surrounds them.</span>
+          </span>
+          <span class="srv-row__arrow" aria-hidden="true">→</span>
         </a>
-        <a class="icon-card" href="./services/collaborative-divorce/index.html" data-reveal>
-          <span class="icon-card__icon" aria-hidden="true">02</span>
-          <h3 class="icon-card__title">Divorce &amp; Collaborative Law</h3>
-          <p class="icon-card__text">Settlement strategy and long-term financial modeling — collaborative divorce, financial-neutral work, asset characterization, and post-divorce rebuilding.</p>
+        <a class="srv-row" href="./services/collaborative-divorce/index.html" data-reveal>
+          <span class="srv-row__num">02</span>
+          <span>
+            <span class="srv-row__title">Divorce &amp; Collaborative Law</span>
+            <span class="srv-row__text">Settlement strategy and long-term financial modeling — collaborative divorce, financial-neutral work, asset characterization, and post-divorce rebuilding.</span>
+          </span>
+          <span class="srv-row__arrow" aria-hidden="true">→</span>
         </a>
-        <a class="icon-card" href="./for-attorneys/index.html" data-reveal>
-          <span class="icon-card__icon" aria-hidden="true">03</span>
-          <h3 class="icon-card__title">For Attorneys</h3>
-          <p class="icon-card__text">Financial analysis for attorneys and complex cases — asset division modeling, forensic review and tracing, and expert witness testimony.</p>
+        <a class="srv-row" href="./for-attorneys/index.html" data-reveal>
+          <span class="srv-row__num">03</span>
+          <span>
+            <span class="srv-row__title">For Attorneys</span>
+            <span class="srv-row__text">Financial analysis for attorneys and complex cases — asset division modeling, forensic review and tracing, and expert witness testimony.</span>
+          </span>
+          <span class="srv-row__arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -153,17 +176,17 @@
 
   <section class="section section--white" id="principal">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">03</span>
         <span class="running-head__label">Principal</span>
         <span class="running-head__rule"></span>
         <span class="running-head__end">Jennifer Failla</span>
       </div>
-      <div class="principal-spotlight" data-reveal>
-        <figure class="principal-spotlight__media photo photo--portrait">
-          <img src="./assets/images/team/jennifer-failla-portrait.webp" alt="Jennifer Failla, CFP, CDFA, Principal at Strada Wealth Management" loading="lazy">
+      <div class="principal-spotlight" data-reveal-group>
+        <figure class="principal-spotlight__media photo photo--portrait" data-reveal>
+          <img class="tone-bw" src="./assets/images/team/jennifer-failla-portrait.webp" alt="Jennifer Failla, CFP, CDFA, Principal at Strada Wealth Management" loading="lazy">
         </figure>
-        <div>
+        <div data-reveal>
           <span class="meta">Principal</span>
           <p class="type-statement" style="margin-top:0.85rem;">Where other planners see complexity, <span class="mark">she sees her specialty.</span></p>
           <p class="lede" style="margin-top:1.25rem;">Based in Austin, Texas, Jennifer works with families navigating life's most financially complex moments — divorce, retirement, the loss of a spouse, a major career change.</p>
@@ -181,30 +204,30 @@
 
   <section class="section section--white" id="approach">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">04</span>
         <span class="running-head__label">Approach</span>
         <span class="running-head__rule"></span>
         <span class="running-head__end">Analysis first</span>
       </div>
-      <div class="panel" data-reveal>
-        <div class="panel__body">
-          <h2 class="type-h2">Decisions made under pressure<br><span class="tone-2">become permanent.</span></h2>
-          <p class="lede" style="margin-top:clamp(1.5rem,3vw,2.25rem);">Many of the most important financial decisions are made under pressure. We help clients evaluate options early — before decisions become permanent — so outcomes are based on analysis, not urgency.</p>
-          <a href="./services/index.html" class="link-inline" style="margin-top:clamp(1.75rem,3vw,2.5rem);align-self:flex-start;">See how the work breaks down <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-        <figure class="panel__media photo--zoom">
-          <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=1400&amp;q=80&amp;auto=format&amp;fit=crop" alt="Financial documents reviewed at a desk" loading="lazy">
+      <div class="overlay-media" data-reveal-group>
+        <h2 class="overlay-media__title" data-reveal>Decisions made under pressure<br><span class="tone-2">become permanent.</span></h2>
+        <figure class="photo photo--wide photo--zoom" data-reveal>
+          <img class="tone-soft" src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=1400&amp;q=80&amp;auto=format&amp;fit=crop" alt="Financial documents reviewed at a desk" loading="lazy">
           <figcaption class="photo__tag">Temporary image — Unsplash</figcaption>
           <figcaption class="photo__overlay"><span class="photo__overlay-label">Working method</span><span class="photo__overlay-meta">Fig. 02</span></figcaption>
         </figure>
+        <div class="overlay-media__foot" data-reveal>
+          <p class="lede mt-0">Many of the most important financial decisions are made under pressure. We help clients evaluate options early — before decisions become permanent — so outcomes are based on analysis, not urgency.</p>
+          <a href="#services" class="link-inline">See how the work breaks down <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section section--paper" id="engagement">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">05</span>
         <span class="running-head__label">Working together</span>
         <span class="running-head__rule"></span>
@@ -212,7 +235,7 @@
       </div>
       <div class="note-block">
         <div class="note-block__edge"><span class="edge-label">Engagement</span></div>
-        <div><h2 class="type-h2 note-block__title">How an engagement works.</h2></div>
+        <div data-reveal><h2 class="type-h2 note-block__title">How an engagement works.</h2></div>
         <div class="note-block__note">
           <div class="compliance-draft" style="margin-top:0;">
             <span class="compliance-draft__tag">Draft — Compliance Review Required</span>
@@ -226,7 +249,7 @@
 
   <section class="section section--white" id="faq-preview">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">06</span>
         <span class="running-head__label">Common questions</span>
         <span class="running-head__rule"></span>
@@ -239,8 +262,8 @@
           <p class="text-muted" style="margin-top:1.25rem;font-size:0.9375rem;">Four full libraries live on the FAQ hub — financial &amp; retirement planning, divorce &amp; marital matters, collaborative divorce, and for attorneys.</p>
           <a href="./faq/index.html" class="link-inline" style="margin-top:1.5rem;">View all FAQs <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <ul class="faq-list">
-          <li class="faq-item">
+        <ul class="faq-list" data-reveal-group>
+          <li class="faq-item" data-reveal>
             <button class="faq-item__q" aria-expanded="false" aria-controls="home-faq-1">
               <span class="faq-item__marker" aria-hidden="true">01</span>
               <span class="faq-item__label">What is divorce financial planning?</span>
@@ -250,7 +273,7 @@
               <p>Divorce financial planning involves assessing and planning for the current and future financial implications of divorce. It encompasses asset division, tax considerations, and post-divorce financial stability.</p>
             </div></div></div>
           </li>
-          <li class="faq-item">
+          <li class="faq-item" data-reveal>
             <button class="faq-item__q" aria-expanded="false" aria-controls="home-faq-2">
               <span class="faq-item__marker" aria-hidden="true">02</span>
               <span class="faq-item__label">What is a Certified Divorce Financial Analyst (CDFA), and how can they help?</span>
@@ -260,7 +283,7 @@
               <p>A CDFA is a professional skilled in the financial aspects of divorce. They play a crucial role in understanding the long-term effects of proposed divorce settlements, tax implications, and asset division.</p>
             </div></div></div>
           </li>
-          <li class="faq-item">
+          <li class="faq-item" data-reveal>
             <button class="faq-item__q" aria-expanded="false" aria-controls="home-faq-3">
               <span class="faq-item__marker" aria-hidden="true">03</span>
               <span class="faq-item__label">How are retirement accounts divided in a divorce?</span>
@@ -277,7 +300,7 @@
 
   <section class="section section--paper" id="proof">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">07</span>
         <span class="running-head__label">Recognition</span>
         <span class="running-head__rule"></span>
@@ -285,7 +308,7 @@
       </div>
       <div class="note-block">
         <div class="note-block__edge"><span class="edge-label">Awards</span></div>
-        <div><h2 class="type-h2 note-block__title">Recognition and client feedback.</h2></div>
+        <div data-reveal><h2 class="type-h2 note-block__title">Recognition and client feedback.</h2></div>
         <div class="note-block__note">
           <div class="compliance-draft" style="margin-top:0;">
             <span class="compliance-draft__tag">Draft — Compliance Review Required</span>
@@ -297,9 +320,9 @@
   </section>
 
   <section class="section cta section--navy">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Make the decision before it makes you.</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Ready to navigate life's financial transitions with clarity? Book a consultation with Jennifer and take the first step.</p>
         <a href="./consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -317,7 +340,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="./services/index.html">Services</a></li>
+        <li><a href="./services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="./services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="./for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="./faq/index.html">FAQ</a></li>
         <li><a href="./blog/index.html">Blog</a></li>

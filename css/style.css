@@ -48,13 +48,15 @@
 }
 .site-nav { display: none; }
 .site-nav__list { display: flex; align-items: center; gap: clamp(1.5rem, 2.4vw, 3rem); }
-.site-nav__list a {
+.site-nav__list a,
+.site-nav__list summary {
   position: relative;
   font-size: 0.9375rem;
   font-weight: 500;
   padding-block: 0.3rem;
 }
-.site-nav__list a::after {
+.site-nav__list a::after,
+.site-nav__list summary::after {
   content: "";
   position: absolute;
   left: 0; right: 100%;
@@ -64,7 +66,54 @@
   transition: right 0.4s var(--ease);
 }
 .site-nav__list a:hover::after,
-.site-nav__list a[aria-current="page"]::after { right: 0; }
+.site-nav__list a[aria-current="page"]::after,
+.site-nav__list summary:hover::after,
+.site-nav__list details[open] summary::after { right: 0; }
+
+/* ---- Services dropdown — native <details>/<summary>, no JS ---- */
+.nav-dropdown { position: relative; }
+.nav-dropdown > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  list-style: none;
+  cursor: pointer;
+}
+.nav-dropdown > summary::-webkit-details-marker { display: none; }
+.nav-dropdown__caret {
+  width: 6px; height: 6px;
+  flex: none;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.3s var(--ease);
+}
+.nav-dropdown[open] .nav-dropdown__caret { transform: rotate(225deg) translateY(1px); }
+.nav-dropdown__panel {
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  left: 0;
+  z-index: 150;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: 1px solid var(--line-on-dark);
+  padding: 0.5rem;
+  box-shadow: 0 16px 32px rgba(18, 28, 38, 0.18);
+}
+.nav-dropdown__panel a {
+  display: block;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background-color 0.25s var(--ease);
+}
+.nav-dropdown__panel a:hover,
+.nav-dropdown__panel a[aria-current="page"] { background: rgba(251, 249, 245, 0.1); }
 
 .site-header__actions { display: flex; align-items: center; gap: 1rem; }
 .btn.site-header__cta { display: none; }
@@ -116,7 +165,8 @@
 }
 .mobile-nav.is-open { opacity: 1; visibility: visible; }
 .mobile-nav__list { display: flex; flex-direction: column; }
-.mobile-nav__list a {
+.mobile-nav__list a,
+.mobile-nav__list summary {
   display: flex;
   align-items: baseline;
   gap: 1.25rem;
@@ -129,21 +179,59 @@
   transform: translateY(14px);
   opacity: 0;
   transition: transform 0.5s var(--ease), opacity 0.5s var(--ease), padding-left 0.35s var(--ease);
+  cursor: pointer;
+  list-style: none;
 }
-.mobile-nav.is-open .mobile-nav__list a { transform: none; opacity: 1; }
-.mobile-nav.is-open .mobile-nav__list li:nth-child(1) a { transition-delay: 0.06s; }
-.mobile-nav.is-open .mobile-nav__list li:nth-child(2) a { transition-delay: 0.12s; }
-.mobile-nav.is-open .mobile-nav__list li:nth-child(3) a { transition-delay: 0.18s; }
-.mobile-nav.is-open .mobile-nav__list li:nth-child(4) a { transition-delay: 0.24s; }
-.mobile-nav.is-open .mobile-nav__list li:nth-child(5) a { transition-delay: 0.30s; }
-.mobile-nav__list a:hover { padding-left: 0.75rem; }
-.mobile-nav__list a span {
+.mobile-nav__list summary::-webkit-details-marker { display: none; }
+.mobile-nav.is-open .mobile-nav__list a,
+.mobile-nav.is-open .mobile-nav__list summary { transform: none; opacity: 1; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(1) a,
+.mobile-nav.is-open .mobile-nav__list li:nth-child(1) summary { transition-delay: 0.06s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(2) a,
+.mobile-nav.is-open .mobile-nav__list li:nth-child(2) summary { transition-delay: 0.12s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(3) a,
+.mobile-nav.is-open .mobile-nav__list li:nth-child(3) summary { transition-delay: 0.18s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(4) a,
+.mobile-nav.is-open .mobile-nav__list li:nth-child(4) summary { transition-delay: 0.24s; }
+.mobile-nav.is-open .mobile-nav__list li:nth-child(5) a,
+.mobile-nav.is-open .mobile-nav__list li:nth-child(5) summary { transition-delay: 0.30s; }
+.mobile-nav__list a:hover,
+.mobile-nav__list summary:hover { padding-left: 0.75rem; }
+.mobile-nav__list a span,
+.mobile-nav__list summary span {
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--ink-on-dark-muted);
 }
+.mobile-nav__caret {
+  margin-left: auto;
+  width: 9px; height: 9px;
+  flex: none;
+  align-self: center;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.3s var(--ease);
+}
+.mobile-nav__list details[open] .mobile-nav__caret { transform: rotate(225deg); }
+.mobile-nav__submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: 1.25rem;
+  padding-bottom: 0.75rem;
+}
+.mobile-nav__submenu a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  padding-block: 0.6rem;
+  border-bottom: 0;
+  gap: 0;
+}
+.mobile-nav__submenu a:hover { padding-left: 0.5rem; }
 .mobile-nav__foot { display: flex; flex-direction: column; gap: 1.25rem; padding-top: 2rem; }
 @media (min-width: 980px) { .mobile-nav { display: none; } }
 body.nav-open { overflow: hidden; }
@@ -161,8 +249,9 @@ body.nav-open { overflow: hidden; }
   font-weight: 600;
   border: 1.5px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
 }
+.btn:hover { transform: translateY(-2px); }
 /* Primary action carries the one accent color, deliberately — everything else is neutral. */
 .btn--primary { background: var(--color-clay); color: var(--color-paper); border-color: var(--color-clay); }
 .btn--primary:hover { background: var(--color-clay-dark); border-color: var(--color-clay-dark); }
@@ -241,6 +330,20 @@ body.nav-open { overflow: hidden; }
 /* ==========================================================================
    HERO — editorial masthead
    ========================================================================== */
+/* On-load entrance for hero content only — a pure CSS @keyframes animation,
+   not the data-reveal system, because that system is scroll-triggered and
+   the hero is always already in view: a JS-toggled transition would either
+   fire before first paint (no visible motion) or need extra JS just for
+   this one case. A CSS animation plays reliably on load either way, needs
+   no JS, and is still fully neutralized by the reduced-motion rule above
+   (animation-duration/-delay are both forced to ~0 there). Kept fast on
+   purpose so the hero reads as immediately present, not delayed. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in { animation: hero-rise 0.6s var(--ease) both; }
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -265,12 +368,17 @@ body.nav-open { overflow: hidden; }
   overflow: hidden;
 }
 .hero__bg img { width: 100%; height: 100%; object-fit: cover; }
-/* Flat scrim, not a gradient — deterministic contrast for the copy above it */
+/* Flat scrim, not a gradient — deterministic contrast for the copy above it.
+   A faint grain layer rides on top of the same pseudo-element so the hero
+   doesn't need a second one. */
 .hero__bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10, 24, 48, 0.72);
+  background-color: rgba(10, 24, 48, 0.72);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 140px 140px;
+  background-blend-mode: overlay;
 }
 /* Attribution tucked bottom-right so it never fights the masthead */
 .hero__bg .photo__tag {
@@ -354,6 +462,18 @@ body.nav-open { overflow: hidden; }
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(18, 28, 38, 0.62) 0%, rgba(18, 28, 38, 0.92) 100%);
+}
+/* Same subtle muted treatment as .tone-muted, extended site-wide to every
+   page-hero photo in one place — backdrop-filter reaches the background-image
+   sitting behind this pseudo-element without touching the heading/type that
+   sits in front of it (z-index:1 below). Falls back to the plain gradient
+   scrim above in browsers without backdrop-filter support — never broken,
+   just slightly less treated. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .page-hero--photo::before {
+    -webkit-backdrop-filter: grayscale(0.45) contrast(1.08) saturate(0.8);
+    backdrop-filter: grayscale(0.45) contrast(1.08) saturate(0.8);
+  }
 }
 .page-hero--photo > .container { position: relative; z-index: 1; }
 .page-hero__title { margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
@@ -441,6 +561,7 @@ body.nav-open { overflow: hidden; }
   font-size: clamp(1.3125rem, 1.9vw, 1.75rem);
   letter-spacing: -0.012em;
   line-height: 1.25;
+  transition: transform 0.4s var(--ease);
 }
 .srv-row__text {
   display: block;
@@ -479,6 +600,7 @@ body.nav-open { overflow: hidden; }
   }
   .srv-row:hover .srv-row__num,
   .srv-row:hover .srv-row__text { color: var(--ink-on-dark-muted); }
+  .srv-row:hover .srv-row__title { transform: translateX(4px); }
   .srv-row:hover .srv-row__arrow { transform: translateX(0.5rem); }
   .srv-row:hover .srv-row__media {
     opacity: 1;
@@ -798,6 +920,40 @@ body.nav-open { overflow: hidden; }
   white-space: nowrap;
 }
 
+/* ---- Photo treatment utilities — applied per image, not uniformly ----
+   tone-bw: high-contrast black and white, for real photography and the
+     stock images that most need to stop reading as stock.
+   tone-muted: partial desaturation, keeps a trace of color — for a photo
+     (like the homepage hero) that should still read as a real, identifiable
+     place rather than go fully monochrome.
+   tone-soft: black and white plus a soft-focus blur, for a supporting image
+     that sits behind bolder overlapping type and shouldn't compete with it.
+   tone-grain: a faint noise overlay, layered on top of a photo via ::after —
+     apply to the figure, not the img, since generated content doesn't
+     render on replaced elements. */
+.tone-bw    { filter: grayscale(1) contrast(1.12) brightness(1.02); }
+.tone-muted { filter: grayscale(0.45) contrast(1.08) saturate(0.8); }
+.tone-soft  { filter: grayscale(1) contrast(1.05) blur(2px); }
+
+.tone-grain { position: relative; }
+.tone-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 140px 140px;
+  mix-blend-mode: overlay;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+/* Escape hatch from the centered container for one photo at a time —
+   used sparingly, not as a page-wide layout mode. */
+.bleed-full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
 /* ---- Media panel: photograph with a card breaking its lower edge ---- */
 .media-panel { position: relative; }
 .media-panel__card {
@@ -880,9 +1036,25 @@ body.nav-open { overflow: hidden; }
   line-height: 1.15;
   letter-spacing: -0.018em;
   max-width: 22ch;
+  /* Soft halo so the headline stays legible wherever it overlaps the
+     photograph below it, regardless of what's under it at that point. */
+  text-shadow: 0 2px 30px var(--color-paper), 0 -1px 18px var(--color-paper);
 }
 @media (min-width: 900px) {
   .overlay-media__title { margin-bottom: -2.5vw; padding-right: 12%; }
+}
+/* Supporting copy set below an overlay-media composition */
+.overlay-media__foot {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+@media (min-width: 900px) {
+  .overlay-media__foot {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
 }
 
 /* ==========================================================================

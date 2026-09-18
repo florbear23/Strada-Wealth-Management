@@ -18,9 +18,16 @@
     <a href="../../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html" aria-current="page">Blog</a></li>
         <li><a href="../../about/index.html">About</a></li>
         <li><a href="../../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../../index.html"><span>01</span>Home</a></li>
-      <li><a href="../../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../../faq/index.html"><span>04</span>FAQ</a></li>
-      <li><a href="../../blog/index.html" aria-current="page"><span>05</span>Blog</a></li>
-      <li><a href="../../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../../blog/index.html" aria-current="page"><span>04</span>Blog</a></li>
+      <li><a href="../../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -97,7 +111,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../../services/index.html">Services</a></li>
+        <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>

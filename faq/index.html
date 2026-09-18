@@ -18,9 +18,16 @@
     <a href="../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../faq/index.html" aria-current="page">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>
         <li><a href="../about/index.html">About</a></li>
         <li><a href="../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../index.html"><span>01</span>Home</a></li>
-      <li><a href="../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../faq/index.html" aria-current="page"><span>04</span>FAQ</a></li>
-      <li><a href="../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -68,29 +82,29 @@
 
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
-      <div class="card-grid card-grid--2">
-        <a class="card" href="../faq/financial-planning/index.html">
+      <div class="card-grid card-grid--2" data-reveal-group>
+        <a class="card" href="../faq/financial-planning/index.html" data-reveal>
           <span class="meta card__eyebrow">01 — 20 questions</span>
           <h2 class="type-h3 card__title">Financial &amp; Retirement Planning</h2>
           <p class="card__text">What is financial planning?</p>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
-        <a class="card" href="../faq/divorce-and-marital-matters/index.html">
+        <a class="card" href="../faq/divorce-and-marital-matters/index.html" data-reveal>
           <span class="meta card__eyebrow">02 — 19 questions</span>
           <h2 class="type-h3 card__title">Divorce &amp; Marital Matters</h2>
           <p class="card__text">What is divorce financial planning?</p>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
-        <a class="card" href="../faq/collaborative-divorce/index.html">
+        <a class="card" href="../faq/collaborative-divorce/index.html" data-reveal>
           <span class="meta card__eyebrow">03 — 20 questions</span>
           <h2 class="type-h3 card__title">Collaborative Divorce</h2>
           <p class="card__text">What is a collaborative law financial neutral?</p>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
-        <a class="card" href="../faq/for-attorneys/index.html">
+        <a class="card" href="../faq/for-attorneys/index.html" data-reveal>
           <span class="meta card__eyebrow">04 — 20 questions</span>
           <h2 class="type-h3 card__title">For Attorneys</h2>
           <p class="card__text">How can a financial analyst and planner assist in legal cases involving financial matters?</p>
@@ -106,9 +120,9 @@
   </section>
 
   <section class="section cta section--dark">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Still have questions?</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Some things are easier to talk through than read.</p>
         <a href="../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -126,7 +140,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>

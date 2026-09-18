@@ -18,9 +18,16 @@
     <a href="../../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../../faq/index.html" aria-current="page">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>
         <li><a href="../../about/index.html">About</a></li>
         <li><a href="../../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../../index.html"><span>01</span>Home</a></li>
-      <li><a href="../../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../../faq/index.html" aria-current="page"><span>04</span>FAQ</a></li>
-      <li><a href="../../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -69,7 +83,7 @@
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
       <ul class="faq-list">
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-01">
             <span class="faq-item__marker" aria-hidden="true">01</span>
             <span class="faq-item__label">What is financial planning?</span>
@@ -79,7 +93,7 @@
             <p>Creating a roadmap for your financial future, covering aspects like savings, investments, taxes, retirement, and estate planning, tailored to meet your long-term goals.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-02">
             <span class="faq-item__marker" aria-hidden="true">02</span>
             <span class="faq-item__label">Why is retirement planning important?</span>
@@ -89,7 +103,7 @@
             <p>Ensuring you have the necessary resources to support yourself and maintain your desired lifestyle in retirement, without the reliability of a regular paycheck. We help clients manage the transition and stress that often accompanies retirement.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-03">
             <span class="faq-item__marker" aria-hidden="true">03</span>
             <span class="faq-item__label">How often should I review my financial plan?</span>
@@ -99,7 +113,7 @@
             <p>Ideally, you should review your financial plan annually or when significant life events occur, such as marriage, the birth of a child, a career change, or inheritance. We meet with clients as frequently as they prefer.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-04">
             <span class="faq-item__marker" aria-hidden="true">04</span>
             <span class="faq-item__label">At what age should I start retirement planning?</span>
@@ -109,7 +123,7 @@
             <p>The sooner, the better. Starting in your 20s or as soon as you begin earning an income allows more time for your investments to grow through the power of compounding interest. However, it’s never too late to begin planning.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-05">
             <span class="faq-item__marker" aria-hidden="true">05</span>
             <span class="faq-item__label">What’s the difference between a 401(k) and an IRA?</span>
@@ -119,7 +133,7 @@
             <p>A 401(k) is a retirement savings plan offered by employers that often includes a match to your contributions. An IRA (Individual Retirement Account) is a retirement saving account you open independently, offering tax advantages.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-06">
             <span class="faq-item__marker" aria-hidden="true">06</span>
             <span class="faq-item__label">How much do I need to save for retirement?</span>
@@ -129,7 +143,7 @@
             <p>The amount varies based on your lifestyle expectations, location, and when you plan to retire. A common benchmark is 70–80% of pre-retirement income, though we plan for 100%.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-07">
             <span class="faq-item__marker" aria-hidden="true">07</span>
             <span class="faq-item__label">What is a Roth IRA, and how is it different from a traditional IRA?</span>
@@ -139,7 +153,7 @@
             <p>A Roth IRA allows you to contribute after-tax dollars and withdraw the money tax-free in retirement. A traditional IRA contributes pre-tax dollars, reducing your taxable income now, but you’ll pay taxes when you withdraw in retirement. Strategic use of both can save thousands in taxes.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-08">
             <span class="faq-item__marker" aria-hidden="true">08</span>
             <span class="faq-item__label">How can I reduce my expenses in retirement?</span>
@@ -149,7 +163,7 @@
             <p>Strategies include downsizing your home, reducing discretionary spending, using senior discounts, and managing healthcare costs carefully.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-09">
             <span class="faq-item__marker" aria-hidden="true">09</span>
             <span class="faq-item__label">What role does Social Security play in retirement planning?</span>
@@ -159,7 +173,7 @@
             <p>Social Security provides a foundation of income in retirement but shouldn’t be relied upon as the sole source. It’s meant to complement your retirement savings and pension.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-10">
             <span class="faq-item__marker" aria-hidden="true">10</span>
             <span class="faq-item__label">How does inflation impact retirement savings?</span>
@@ -169,7 +183,7 @@
             <p>Inflation reduces the purchasing power of your money over time, meaning you’ll need more money in the future to maintain the same standard of living, making it crucial to plan for inflation.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-11">
             <span class="faq-item__marker" aria-hidden="true">11</span>
             <span class="faq-item__label">Should I pay off debt before saving for retirement?</span>
@@ -179,7 +193,7 @@
             <p>It depends on the interest rates. High-interest debt should generally be paid off first, but it’s also important to contribute enough to your retirement to get any employer match, as that’s essentially free money.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-12">
             <span class="faq-item__marker" aria-hidden="true">12</span>
             <span class="faq-item__label">What’s the best way to invest for retirement?</span>
@@ -189,7 +203,7 @@
             <p>Diversification is key. A mix of stocks, bonds, and other investments can help manage risk. It’s also wise to adjust your investment strategy as you get closer to retirement age.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-13">
             <span class="faq-item__marker" aria-hidden="true">13</span>
             <span class="faq-item__label">Can I work after retiring?</span>
@@ -199,7 +213,7 @@
             <p>Yes, many people choose part-time work or consulting after retirement for both income and personal fulfillment. However, be mindful of how this income may affect your Social Security benefits.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-14">
             <span class="faq-item__marker" aria-hidden="true">14</span>
             <span class="faq-item__label">What is a Certified Financial Planner (CFP), and why might I need one?</span>
@@ -209,7 +223,7 @@
             <p>A CFP® is a professional with certification in financial planning. This designation helps ensure comprehensive planning aligned with your goals.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-15">
             <span class="faq-item__marker" aria-hidden="true">15</span>
             <span class="faq-item__label">How do I choose a financial planner?</span>
@@ -219,7 +233,7 @@
             <p>Look for certifications, a fiduciary commitment, experience relevant to your needs, and a fee structure that fits with your budget and preferences.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-16">
             <span class="faq-item__marker" aria-hidden="true">16</span>
             <span class="faq-item__label">What’s the benefit of starting retirement planning early?</span>
@@ -229,7 +243,7 @@
             <p>Starting early gives your investments more time to grow, leveraging the benefit of compounding returns which can significantly increase the size of your retirement fund.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-17">
             <span class="faq-item__marker" aria-hidden="true">17</span>
             <span class="faq-item__label">How can I ensure my retirement savings last?</span>
@@ -239,7 +253,7 @@
             <p>Approaches include careful withdrawal planning, considering inflation, maintaining appropriate investment allocation, and potentially delaying Social Security benefits.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-18">
             <span class="faq-item__marker" aria-hidden="true">18</span>
             <span class="faq-item__label">What is estate planning, and how does it fit into my financial plan?</span>
@@ -249,7 +263,7 @@
             <p>Estate planning is preparing for the management and distribution of your assets after your death. It’s a critical component of a financial plan, ensuring your assets are distributed according to your wishes.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-19">
             <span class="faq-item__marker" aria-hidden="true">19</span>
             <span class="faq-item__label">How can Jennifer Failla aid in my retirement planning?</span>
@@ -259,7 +273,7 @@
             <p>Jennifer offers expertise in comprehensive financial planning and develops tailored retirement strategies with ongoing guidance.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="fin-20">
             <span class="faq-item__marker" aria-hidden="true">20</span>
             <span class="faq-item__label">Why should I consider Strada Wealth Management for my financial planning needs?</span>
@@ -275,13 +289,13 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="card-grid card-grid--2">
-        <a class="card" href="../../faq/for-attorneys/index.html">
+      <div class="card-grid card-grid--2" data-reveal-group>
+        <a class="card" href="../../faq/for-attorneys/index.html" data-reveal>
           <span class="meta card__eyebrow">Previous</span>
           <h2 class="type-h3 card__title">For Attorneys</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
-        <a class="card" href="../../faq/divorce-and-marital-matters/index.html">
+        <a class="card" href="../../faq/divorce-and-marital-matters/index.html" data-reveal>
           <span class="meta card__eyebrow">Next</span>
           <h2 class="type-h3 card__title">Divorce &amp; Marital Matters</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
@@ -291,9 +305,9 @@
   </section>
 
   <section class="section cta section--dark">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Still have questions?</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Some things are easier to talk through than read.</p>
         <a href="../../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -311,7 +325,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../../services/index.html">Services</a></li>
+        <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>

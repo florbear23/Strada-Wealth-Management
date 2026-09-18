@@ -18,9 +18,16 @@
     <a href="../../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../../faq/index.html" aria-current="page">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>
         <li><a href="../../about/index.html">About</a></li>
         <li><a href="../../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../../index.html"><span>01</span>Home</a></li>
-      <li><a href="../../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../../faq/index.html" aria-current="page"><span>04</span>FAQ</a></li>
-      <li><a href="../../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -69,7 +83,7 @@
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
       <ul class="faq-list">
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-01">
             <span class="faq-item__marker" aria-hidden="true">01</span>
             <span class="faq-item__label">How can a financial analyst and planner assist in legal cases involving financial matters?</span>
@@ -79,7 +93,7 @@
             <p>A financial analyst provides expert analysis on financial issues, offering detailed reports for asset valuation, income analysis, financial impact forecasts, and more, supporting attorneys in building a stronger case for their clients.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-02">
             <span class="faq-item__marker" aria-hidden="true">02</span>
             <span class="faq-item__label">What specific services does Jennifer Failla offer to attorneys?</span>
@@ -89,7 +103,7 @@
             <p>Jennifer offers financial analysis in divorce, including asset tracing, valuation, income and expense analysis, settlement scenario forecasting, mediation client support and expert witness testimony.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-03">
             <span class="faq-item__marker" aria-hidden="true">03</span>
             <span class="faq-item__label">Can a financial planner act as an expert witness in court?</span>
@@ -99,7 +113,7 @@
             <p>Yes, financial planners like Jennifer can serve as expert witnesses, providing testimony on financial matters to support case facts and influence court decisions.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-04">
             <span class="faq-item__marker" aria-hidden="true">04</span>
             <span class="faq-item__label">How does a financial planner ensure confidentiality and compliance?</span>
@@ -109,7 +123,7 @@
             <p>Financial planners adhere to strict confidentiality protocols and comply with legal standards and regulations, ensuring all client information is secure and used appropriately.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-05">
             <span class="faq-item__marker" aria-hidden="true">05</span>
             <span class="faq-item__label">What is the benefit of involving a financial planner early in a case?</span>
@@ -119,7 +133,7 @@
             <p>Early involvement allows for thorough financial assessment and strategic planning, which can lead to more favorable settlements and potentially avoid prolonged litigation.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-06">
             <span class="faq-item__marker" aria-hidden="true">06</span>
             <span class="faq-item__label">How can Jennifer Failla assist in collaborative law cases?</span>
@@ -129,7 +143,7 @@
             <p>Jennifer can serve as a financial neutral, analyzing financial situations impartially to help both parties understand the financial implications of their decisions.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-07">
             <span class="faq-item__marker" aria-hidden="true">07</span>
             <span class="faq-item__label">Is it possible for attorneys to work with a financial planner on a retainer basis?</span>
@@ -139,7 +153,7 @@
             <p>Yes, attorneys can engage financial professionals on a retainer basis to provide ongoing support for complex cases or high-net-worth clients requiring continuous financial analysis.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-08">
             <span class="faq-item__marker" aria-hidden="true">08</span>
             <span class="faq-item__label">What role does a financial planner play in divorce settlements?</span>
@@ -149,7 +163,7 @@
             <p>In divorce cases, a financial expert assesses the division of assets, liabilities, tax implications, and future financial projections to help attorneys negotiate equitable settlements.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-09">
             <span class="faq-item__marker" aria-hidden="true">09</span>
             <span class="faq-item__label">Can financial planners assist with prenuptial and postnuptial agreements?</span>
@@ -159,7 +173,7 @@
             <p>Absolutely — planners can evaluate and present the financial standing of parties, aiding in creating fair prenuptial and postnuptial agreements that protect both parties’ interests.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-10">
             <span class="faq-item__marker" aria-hidden="true">10</span>
             <span class="faq-item__label">How do financial planners help in estate planning and probate cases?</span>
@@ -169,7 +183,7 @@
             <p>They provide valuation of estate assets, financial impact analysis, support in disputes, and advice on tax-efficient asset distribution strategies.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-11">
             <span class="faq-item__marker" aria-hidden="true">11</span>
             <span class="faq-item__label">What information do financial planners need from attorneys to begin case work?</span>
@@ -179,7 +193,7 @@
             <p>Comprehensive financial data related to the case, including asset inventories, income statements, tax returns, and any pertinent legal documents.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-12">
             <span class="faq-item__marker" aria-hidden="true">12</span>
             <span class="faq-item__label">Can a financial planner identify hidden assets in divorce or estate cases?</span>
@@ -189,7 +203,7 @@
             <p>Through financial forensics and tracing techniques, financial planners can uncover discrepancies, identify hidden assets, and ensure fair asset division.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-13">
             <span class="faq-item__marker" aria-hidden="true">13</span>
             <span class="faq-item__label">What makes Jennifer Failla’s services unique for attorneys?</span>
@@ -199,7 +213,7 @@
             <p>Jennifer combines her financial expertise with a deep understanding of legal processes through extensive training in financial matters and years of experience, offering tailored analysis and strategic insights that enhance case outcomes.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-14">
             <span class="faq-item__marker" aria-hidden="true">14</span>
             <span class="faq-item__label">How does a financial planner assist in child support and alimony cases?</span>
@@ -209,7 +223,7 @@
             <p>A financial planner calculates realistic income and expense projections, contributing to equitable support determinations that reflect each party’s financial capacity.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-15">
             <span class="faq-item__marker" aria-hidden="true">15</span>
             <span class="faq-item__label">Are financial planners available for consultation throughout a case’s progression?</span>
@@ -219,7 +233,7 @@
             <p>Yes, financial planners typically remain available for consultations, adjustments to financial analyses, and additional support as cases evolve.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-16">
             <span class="faq-item__marker" aria-hidden="true">16</span>
             <span class="faq-item__label">How do financial planners charge for their services in legal cases?</span>
@@ -229,7 +243,7 @@
             <p>Services may be charged on an hourly basis, a flat fee for specific tasks, or a retainer for ongoing cases, depending on the complexity and requirements of the work.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-17">
             <span class="faq-item__marker" aria-hidden="true">17</span>
             <span class="faq-item__label">Can financial planners help with mediation and settlement negotiations?</span>
@@ -239,7 +253,7 @@
             <p>Indeed — by providing factual, unbiased financial information and projections, financial advisors like Jennifer can play a pivotal role in mediation processes and settlement negotiations.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-18">
             <span class="faq-item__marker" aria-hidden="true">18</span>
             <span class="faq-item__label">What is the process for engaging Jennifer Failla in a legal case?</span>
@@ -249,7 +263,7 @@
             <p>The process begins with a consultation to discuss the specifics of the case, followed by an agreement retained by the law firm on scope, fees, and timelines.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-19">
             <span class="faq-item__marker" aria-hidden="true">19</span>
             <span class="faq-item__label">How can attorneys and financial planners collaborate most effectively?</span>
@@ -259,7 +273,7 @@
             <p>Clear communication, setting mutual expectations early, and regular updates ensure that financial analyses align with legal strategies and case goals.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="att-20">
             <span class="faq-item__marker" aria-hidden="true">20</span>
             <span class="faq-item__label">Why should attorneys consider partnering with Strada Wealth Management for their cases?</span>
@@ -275,13 +289,13 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="card-grid card-grid--2">
-        <a class="card" href="../../faq/collaborative-divorce/index.html">
+      <div class="card-grid card-grid--2" data-reveal-group>
+        <a class="card" href="../../faq/collaborative-divorce/index.html" data-reveal>
           <span class="meta card__eyebrow">Previous</span>
           <h2 class="type-h3 card__title">Collaborative Divorce</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
-        <a class="card" href="../../faq/financial-planning/index.html">
+        <a class="card" href="../../faq/financial-planning/index.html" data-reveal>
           <span class="meta card__eyebrow">Next</span>
           <h2 class="type-h3 card__title">Financial &amp; Retirement Planning</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
@@ -291,9 +305,9 @@
   </section>
 
   <section class="section cta section--dark">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Still have questions?</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Some things are easier to talk through than read.</p>
         <a href="../../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -311,7 +325,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../../services/index.html">Services</a></li>
+        <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>

@@ -18,9 +18,16 @@
     <a href="../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html" aria-current="page">Blog</a></li>
         <li><a href="../about/index.html">About</a></li>
         <li><a href="../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../index.html"><span>01</span>Home</a></li>
-      <li><a href="../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../faq/index.html"><span>04</span>FAQ</a></li>
-      <li><a href="../blog/index.html" aria-current="page"><span>05</span>Blog</a></li>
-      <li><a href="../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../blog/index.html" aria-current="page"><span>04</span>Blog</a></li>
+      <li><a href="../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -75,7 +89,7 @@
       </div>
 
       <div class="card-grid card-grid--3" style="margin-top:clamp(2.5rem,5vw,3.5rem);">
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/future-you-will-thank-you-turn-6k-into-millions.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Aug 20</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/future-you-will-thank-you-turn-6k-into-millions/index.html">Future You Will Thank You: Turn $6K Into Millions</a></h2>
@@ -83,7 +97,7 @@
           <span class="blog-card__status">Frozen — needs counsel</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 13</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/why-should-you-diversify/index.html">Why Should You Diversify?</a></h2>
@@ -91,7 +105,7 @@
           <span class="blog-card__status">Frozen — needs counsel</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jun 11</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/ex-husband-ordered-to-pay-3000-monthly-spousal-maintenance-a-cautionary-tale/index.html">Ex-Husband Ordered to Pay $3,000 Monthly Spousal Maintenance: A Cautionary Tale</a></h2>
@@ -99,7 +113,7 @@
           <span class="blog-card__status">Frozen — needs counsel</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/navigating-market-sentiments-a-look-beyond-bearish-perspectives.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 26</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/navigating-market-sentiments-a-look-beyond-bearish-perspectives/index.html">Navigating Market Sentiments: A Look Beyond Bearish Perspectives</a></h2>
@@ -107,7 +121,7 @@
           <span class="blog-card__status">Frozen — needs counsel</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/the-power-of-closed-end-funds-j-curves-and-multifamily-investing-in-future-markets.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Nov 14</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-power-of-closed-end-funds-j-curves-and-multifamily-investing-in-future-markets/index.html">The Power of Closed-End Funds, J-Curves, and Multifamily Investing in Future Markets</a></h2>
@@ -115,7 +129,7 @@
           <span class="blog-card__status">Frozen — needs counsel</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/the-ongoing-debate-over-no-fault-divorce-in-america.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Nov 18</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-ongoing-debate-over-no-fault-divorce-in-america/index.html">The Ongoing Debate Over No-Fault Divorce in America</a></h2>
@@ -123,7 +137,7 @@
           <span class="blog-card__status">Frozen — needs counsel</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/are-my-dollar-bills-transparent.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Apr 23, 2015</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/are-my-dollar-bills-transparent/index.html">Are My Dollar Bills Transparent?</a></h2>
@@ -131,7 +145,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/more-on-investment-fees.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">May 2</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/more-on-investment-fees/index.html">More on Investment Fees</a></h2>
@@ -139,7 +153,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 18</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/klq2nmtpc3ydv0xdjmzo6r0wk67hr1/index.html">401(k) Fees: The Wolf in Sheep's Clothing</a></h2>
@@ -147,7 +161,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/stradas-fiduciary-oath-so-what.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 21</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/stradas-fiduciary-oath-so-what/index.html">Strada's Fiduciary Oath — So What?</a></h2>
@@ -155,7 +169,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/s3a72zclibwz2v8ga8c0j4glwjnr03.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Oct 20</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/s3a72zclibwz2v8ga8c0j4glwjnr03/index.html">My Frustration For You — Educate Yourself, Demand More</a></h2>
@@ -163,7 +177,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jan 14</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/year-in-review-and-a-look-ahead/index.html">Year in Review and a Look Ahead</a></h2>
@@ -171,7 +185,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/announcing-strada-wealth-management-llc.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Apr 21</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/announcing-strada-wealth-management-llc/index.html">Announcing Strada Wealth Management, LLC</a></h2>
@@ -179,7 +193,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jan 29</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/99hour-mediation-service-aims-to-serve-families/index.html">$99/Hour Mediation Service Aims to Serve Families</a></h2>
@@ -187,7 +201,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/qualifying-for-a-mortgage-after-divorce-ok-what-about-while-waiting-for-the-decree.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Nov 4</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/qualifying-for-a-mortgage-after-divorce-ok-what-about-while-waiting-for-the-decree/index.html">Qualifying for a Mortgage After Divorce — OK — What About While Waiting for the Decree?</a></h2>
@@ -195,7 +209,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 31</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/enjoy-the-journey-to-your-retirement-savings-goal/index.html">Enjoy the Journey to Your Retirement Savings Goal</a></h2>
@@ -203,7 +217,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 21</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/in-divorce-transparency-is-key-for-both-parties-to-succeed/index.html">In Divorce, Transparency Is Key for Both Parties to Succeed</a></h2>
@@ -211,7 +225,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 11</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/when-a-prenuptial-is-not-an-option-or-it-makes-your-queasy-at-the-thought/index.html">When a Prenuptial Is Not an Option, or It Makes You Queasy at the Thought</a></h2>
@@ -219,7 +233,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 1</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/inflation-and-your-portfolio-navigating-the-choppy-waters-of-rising-prices/index.html">Inflation and Your Portfolio: Navigating the Choppy Waters of Rising Prices</a></h2>
@@ -227,7 +241,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jun 24</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/crushing-debt-chasing-dreams-a-millennials-guide-to-financial-freedom/index.html">Crushing Debt, Chasing Dreams: A Millennial's Guide to Financial Freedom</a></h2>
@@ -235,7 +249,7 @@
           <span class="blog-card__status">Needs compliance review</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/welcome-to-your-comprehensive-guide-on-retirement-planning.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jun 1</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/welcome-to-your-comprehensive-guide-on-retirement-planning/index.html">Welcome to Your Comprehensive Guide on Retirement Planning</a></h2>
@@ -243,7 +257,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/navigating-retirement-a-comprehensive-guide-to-investments-and-health-care.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Aug 3</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/navigating-retirement-a-comprehensive-guide-to-investments-and-health-care/index.html">Navigating Retirement: A Comprehensive Guide to Investments and Health Care</a></h2>
@@ -251,7 +265,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/in-depth-guide-to-retirement-savings-understanding-iras-and-401k-plans.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 6</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/in-depth-guide-to-retirement-savings-understanding-iras-and-401k-plans/index.html">In-Depth Guide to Retirement Savings: Understanding IRAs and 401(k) Plans</a></h2>
@@ -259,7 +273,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 22</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/from-foundation-to-fortress-your-guide-to-investing-basics-and-portfolio-building/index.html">From Foundation to Fortress: Your Guide to Investing Basics and Portfolio Building</a></h2>
@@ -267,7 +281,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/strategic-tax-planning-essential-tips-for-maximizing-your-financial-efficiency.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 2</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/strategic-tax-planning-essential-tips-for-maximizing-your-financial-efficiency/index.html">Strategic Tax Planning: Essential Tips for Maximizing Your Financial Efficiency</a></h2>
@@ -275,7 +289,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/understanding-the-ripple-effects-how-global-economics-shape-personal-finance.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Feb 2</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/understanding-the-ripple-effects-how-global-economics-shape-personal-finance/index.html">Understanding the Ripple Effects: How Global Economics Shape Personal Finance</a></h2>
@@ -283,7 +297,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jan 8</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-power-of-leaving-a-legacy-for-our-children/index.html">The Power of Leaving a Legacy for Our Children</a></h2>
@@ -291,7 +305,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/navigating-lifes-transitions.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jan 5</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/navigating-lifes-transitions/index.html">Navigating Life's Transitions: The Vital Role of Financial Re-Planning</a></h2>
@@ -299,7 +313,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 17</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/essential-questions-to-ask-your-divorce-attorney-resource-guide/index.html">Essential Questions to Ask Your Divorce Attorney — Resource Guide</a></h2>
@@ -307,7 +321,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 15</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/beyond-the-transaction-why-a-solid-financial-foundation-matters-at-every-stage/index.html">Beyond the Transaction: Why a Solid Financial Foundation Matters at Every Stage</a></h2>
@@ -315,7 +329,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 8</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/interest-rate-hikes-and-your-money-navigating-the-new-financial-landscape/index.html">Interest Rate Hikes and Your Money: Navigating the New Financial Landscape</a></h2>
@@ -323,7 +337,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 20</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/veterans-can-take-advantage-of-a-va-loan/index.html">Veterans Can Take Advantage of a VA Loan</a></h2>
@@ -331,7 +345,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Aug 6</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/reducing-the-stress-of-a-job-loss/index.html">Reducing the Stress of a Job Loss</a></h2>
@@ -339,7 +353,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 5</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-uncertain-future-of-529-plans/index.html">The Uncertain Future of 529 Plans</a></h2>
@@ -347,7 +361,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/prenuptial-agreements-why-the-long-face.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 3</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/prenuptial-agreements-why-the-long-face/index.html">Prenuptial Agreements — Why the Long Face?</a></h2>
@@ -355,7 +369,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/when-clients-divorce.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 16</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/when-clients-divorce/index.html">When Clients Divorce</a></h2>
@@ -363,7 +377,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 15</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/actionable-steps-when-buying-a-home-is-a-must-in-divorce/index.html">Actionable Steps When Buying a Home Is a Must in Divorce</a></h2>
@@ -371,7 +385,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 4</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/update-your-risk-profile-with-your-investment-advisor/index.html">Update Your Risk Profile with Your Investment Advisor</a></h2>
@@ -379,7 +393,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Nov 19</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/did-you-say-i-do-heres-how-to-change-your-last-name/index.html">Did You Say "I Do?" Here's How to Change Your Last Name</a></h2>
@@ -387,7 +401,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/allowance-for-children-more-than-a-lesson-on-paper.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Sep 17</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/allowance-for-children-more-than-a-lesson-on-paper/index.html">Allowance for Children: More Than a Lesson on Paper</a></h2>
@@ -395,7 +409,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 31</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/ul1udp30w9bwetirpz3ev0zbf94t2r/index.html">Not All Credit Reports Are Created Equal</a></h2>
@@ -403,7 +417,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/the-power-of-a-p-o-box.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">May 7</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-power-of-a-p-o-box/index.html">The Power of a P.O. Box</a></h2>
@@ -411,7 +425,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/the-post-divorce-checklist.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Apr 9</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-post-divorce-checklist/index.html">The Post-Divorce Checklist</a></h2>
@@ -419,7 +433,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/save-the-date-apr-17-why-collaborative-needs-to-be-a-part-of-your-practice.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 26</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/save-the-date-apr-17-why-collaborative-needs-to-be-a-part-of-your-practice/index.html">Save the Date, Apr 17 — Why Collaborative Needs to Be a Part of Your Practice</a></h2>
@@ -427,7 +441,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/know-what-you-own-for-your-own-sake.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 25</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/know-what-you-own-for-your-own-sake/index.html">Know What You Own for Your Own Sake</a></h2>
@@ -435,7 +449,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/ensuring-long-term-financial-interest.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Mar 14</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/ensuring-long-term-financial-interest/index.html">Ensuring Long-Term Financial Interest</a></h2>
@@ -443,7 +457,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/im-officially-divorced-now-what.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Feb 27</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/im-officially-divorced-now-what/index.html">I'm Officially Divorced. Now What?</a></h2>
@@ -451,7 +465,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/you-are-not-divorced.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Feb 17</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/you-are-not-divorced/index.html">You Are Not Divorced?</a></h2>
@@ -459,7 +473,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jun 17</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/planning-for-retirement-how-much-is-enough/index.html">Planning for Retirement: How Much Is Enough?</a></h2>
@@ -467,7 +481,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Oct 6</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/comprehensive-guide-to-advanced-ai-technologies-deep-learning-and-computer-vision/index.html">Comprehensive Guide to Advanced AI Technologies: Deep Learning and Computer Vision</a></h2>
@@ -475,7 +489,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Sep 1</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/unlocking-the-future-a-comprehensive-guide-to-artificial-intelligence-and-machine-learning/index.html">Unlocking the Future: A Comprehensive Guide to Artificial Intelligence and Machine Learning</a></h2>
@@ -483,7 +497,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Jul 29</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-evolution-of-data-security-from-on-premise-to-cloud-amp-beyond/index.html">The Evolution of Data Security: From On-Premise to Cloud &amp; Beyond</a></h2>
@@ -491,7 +505,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/combined-article-on-ais-role-in-various-aspects-of-finance.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Dec 1</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/combined-article-on-ais-role-in-various-aspects-of-finance/index.html">Revolutionizing Finance with AI: From Fraud Detection to Personal Financial Management</a></h2>
@@ -499,7 +513,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/placeholder-landscape.svg" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Nov 13</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/strada-charitable-giving-webinar/index.html">Strada Charitable Giving Webinar with Fidelity Charitable</a></h2>
@@ -507,7 +521,7 @@
           <span class="blog-card__status">Migrated</span>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card" data-reveal>
           <figure class="photo photo--landscape blog-card__media"><img src="../assets/images/blog/the-evolution-and-ethical-implications-of-artificial-intelligence-across-industries.webp" alt="" loading="lazy"></figure>
           <div class="blog-card__meta"><span class="meta text-muted">Nov 3</span></div>
           <h2 class="type-h3 blog-card__title"><a href="../blog/the-evolution-and-ethical-implications-of-artificial-intelligence-across-industries/index.html">The Evolution and Ethical Implications of Artificial Intelligence Across Industries</a></h2>
@@ -529,7 +543,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>

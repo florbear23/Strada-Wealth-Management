@@ -18,9 +18,16 @@
     <a href="../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>
         <li><a href="../about/index.html" aria-current="page">About</a></li>
         <li><a href="../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../index.html"><span>01</span>Home</a></li>
-      <li><a href="../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../faq/index.html"><span>04</span>FAQ</a></li>
-      <li><a href="../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../about/index.html" aria-current="page"><span>06</span>About</a></li>
-      <li><a href="../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../about/index.html" aria-current="page"><span>05</span>About</a></li>
+      <li><a href="../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -68,13 +82,13 @@
 
   <section class="section section--white">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">01</span><span class="running-head__label">Principal</span>
         <span class="running-head__rule"></span><span class="running-head__end">Jennifer Failla</span>
       </div>
       <div class="feature">
         <figure class="photo photo--portrait photo--zoom">
-          <img src="../assets/images/team/jennifer-failla-portrait.webp" alt="Jennifer Failla, CFP, CDFA, Principal at Strada Wealth Management" loading="lazy">
+          <img class="tone-bw" src="../assets/images/team/jennifer-failla-portrait.webp" alt="Jennifer Failla, CFP, CDFA, Principal at Strada Wealth Management" loading="lazy">
           <figcaption class="photo__overlay"><span class="photo__overlay-label">Jennifer Failla</span><span class="photo__overlay-meta">Principal</span></figcaption>
         </figure>
         <div class="feature__body" data-reveal>
@@ -93,7 +107,7 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">02</span><span class="running-head__label">Credentials</span>
         <span class="running-head__rule"></span><span class="running-head__end">What the letters mean</span>
       </div>
@@ -109,7 +123,7 @@
 
   <section class="section section--dark">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">03</span><span class="running-head__label">Philosophy</span>
         <span class="running-head__rule"></span><span class="running-head__end">Vision</span>
       </div>
@@ -120,11 +134,11 @@
           <p class="statement-block__support">Jennifer believes every client deserves the knowledge and clarity to make their own informed decisions, not just a plan handed to them. That conviction shapes everything: how she communicates, how she structures her advice, and why she built a firm where clients leave every conversation feeling more capable, not more dependent.</p>
         </div>
       </div>
-      <div class="mosaic" style="margin-top:clamp(3rem,6vw,5rem);">
-        <figure class="mosaic__item mosaic__item--lg"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Two people in conversation" loading="lazy"><figcaption class="photo__tag">Temporary image — Unsplash</figcaption><figcaption class="photo__overlay"><span class="photo__overlay-label">The practice</span><span class="photo__overlay-meta">Fig. 02</span></figcaption></figure>
-        <figure class="mosaic__item mosaic__item--tall"><img src="https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=800&amp;q=75&amp;auto=format&amp;fit=crop" alt="Austin, Texas" loading="lazy"><figcaption class="photo__tag">Unsplash</figcaption></figure>
-        <figure class="mosaic__item"><img src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Documents being reviewed" loading="lazy"><figcaption class="photo__tag">Unsplash</figcaption></figure>
-        <figure class="mosaic__item"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Notes and a laptop on a desk" loading="lazy"><figcaption class="photo__tag">Unsplash</figcaption></figure>
+      <div class="mosaic" style="margin-top:clamp(3rem,6vw,5rem);" data-reveal-group>
+        <figure class="mosaic__item mosaic__item--lg" data-reveal><img class="tone-muted" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" alt="Two people in conversation" loading="lazy"><figcaption class="photo__tag">Temporary image — Unsplash</figcaption><figcaption class="photo__overlay"><span class="photo__overlay-label">The practice</span><span class="photo__overlay-meta">Fig. 02</span></figcaption></figure>
+        <figure class="mosaic__item mosaic__item--tall" data-reveal><img class="tone-muted" src="https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=800&amp;q=75&amp;auto=format&amp;fit=crop" alt="Austin, Texas" loading="lazy"><figcaption class="photo__tag">Unsplash</figcaption></figure>
+        <figure class="mosaic__item" data-reveal><img class="tone-muted" src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Documents being reviewed" loading="lazy"><figcaption class="photo__tag">Unsplash</figcaption></figure>
+        <figure class="mosaic__item" data-reveal><img class="tone-muted" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&amp;q=75&amp;auto=format&amp;fit=crop" alt="Notes and a laptop on a desk" loading="lazy"><figcaption class="photo__tag">Unsplash</figcaption></figure>
       </div>
       <div class="bleed-media__caption"><span>Fig. 02 — Practice</span><span>Strada</span></div>
     </div>
@@ -132,11 +146,11 @@
 
   <section class="section section--white">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">04</span><span class="running-head__label">Education &amp; community</span>
         <span class="running-head__rule"></span><span class="running-head__end">Background</span>
       </div>
-      <div class="section-lead">
+      <div class="section-lead" data-reveal>
         <h2 class="type-h2">Education and<br><span class="tone-2">community involvement.</span></h2>
         <p class="section-lead__support">Migrated from the current site. Academic and volunteer detail should be confirmed against Strada's marketing-approved bio before publication.</p>
       </div>
@@ -151,13 +165,13 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">05</span><span class="running-head__label">Recognition</span>
         <span class="running-head__rule"></span><span class="running-head__end">Pending review</span>
       </div>
       <div class="note-block">
         <div class="note-block__edge"><span class="edge-label">Awards</span></div>
-        <div><h2 class="type-h2 note-block__title">Speaking and recognition.</h2></div>
+        <div data-reveal><h2 class="type-h2 note-block__title">Speaking and recognition.</h2></div>
         <div class="note-block__note">
           <div class="compliance-draft" style="margin-top:0;">
             <span class="compliance-draft__tag">Draft — Compliance Review Required</span>
@@ -169,9 +183,9 @@
   </section>
 
   <section class="section cta section--navy">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Make the decision before it makes you.</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Book a consultation with Jennifer and start with a clear picture.</p>
         <a href="../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -189,7 +203,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>

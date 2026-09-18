@@ -18,9 +18,16 @@
     <a href="../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../for-attorneys/index.html" aria-current="page">For Attorneys</a></li>
-        <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>
         <li><a href="../about/index.html">About</a></li>
         <li><a href="../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../index.html"><span>01</span>Home</a></li>
-      <li><a href="../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../for-attorneys/index.html" aria-current="page"><span>03</span>For Attorneys</a></li>
-      <li><a href="../faq/index.html"><span>04</span>FAQ</a></li>
-      <li><a href="../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -68,7 +82,7 @@
 
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
-      <div class="spread spread--offset">
+      <div class="spread spread--offset" data-reveal-group>
         <div class="spread__body" data-reveal>
           <p class="spread__index" aria-hidden="true">01</p>
           <h2 class="type-h2 spread__title">Where we add value.</h2>
@@ -83,8 +97,8 @@
             <li>Expert witness testimony</li>
           </ul>
         </div>
-        <figure class="photo photo--portrait spread__media photo--zoom">
-          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1100&amp;q=80&amp;auto=format&amp;fit=crop" alt="Law library shelving" loading="lazy">
+        <figure class="photo photo--portrait spread__media photo--zoom" data-reveal>
+          <img class="tone-muted" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1100&amp;q=80&amp;auto=format&amp;fit=crop" alt="Law library shelving" loading="lazy">
           <figcaption class="photo__tag">Temporary image — Unsplash</figcaption>
           <figcaption class="photo__overlay"><span class="photo__overlay-label">Professional Partners</span><span class="photo__overlay-meta">Fig. 01</span></figcaption>
         </figure>
@@ -94,7 +108,7 @@
 
   <section class="section section--dark">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">02</span><span class="running-head__label">Most effective when</span>
         <span class="running-head__rule"></span><span class="running-head__end">Engaged early</span>
       </div>
@@ -109,22 +123,22 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">03</span><span class="running-head__label">Areas where we partner</span>
         <span class="running-head__rule"></span><span class="running-head__end">Co-mediation</span>
       </div>
-      <div class="card-grid card-grid--3">
-        <div class="card">
+      <div class="card-grid card-grid--3" data-reveal-group>
+        <div class="card" data-reveal>
           <span class="meta card__eyebrow">Co-Mediation</span>
           <h3 class="type-h3 card__title">With Board Certified Attorneys</h3>
           <p class="card__text">Strada teams up with top-tier Board Certified family law attorneys to work toward a fair settlement — we handle the financial side so your client can focus on moving forward.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
           <span class="meta card__eyebrow">Litigation Support</span>
           <h3 class="type-h3 card__title">Financial Insight for Legal Challenges</h3>
           <p class="card__text">In-depth analysis, expert testimony, and clear financial evidence to support your case with unbiased financial insight.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
           <span class="meta card__eyebrow">Financial Neutral</span>
           <h3 class="type-h3 card__title">Impartial Guidance, Collaborative Setting</h3>
           <p class="card__text">Asset tracing, characterization, and thorough financial analysis to help divorcing spouses reach a balanced settlement.</p>
@@ -138,9 +152,9 @@
   </section>
 
   <section class="section cta section--navy">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Discuss a case.</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">If financial clarity would support your case strategy or client decision-making, we're available to consult.</p>
         <a href="../consultation/index.html" class="link-xl">Schedule with Jennifer <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -158,7 +172,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../faq/index.html">FAQ</a></li>
         <li><a href="../blog/index.html">Blog</a></li>

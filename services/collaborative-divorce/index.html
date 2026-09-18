@@ -18,9 +18,16 @@
     <a href="../../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../../services/index.html" aria-current="page">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../../services/collaborative-divorce/index.html" aria-current="page">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>
         <li><a href="../../about/index.html">About</a></li>
         <li><a href="../../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../../index.html"><span>01</span>Home</a></li>
-      <li><a href="../../services/index.html" aria-current="page"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../../services/collaborative-divorce/index.html" aria-current="page">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../../faq/index.html"><span>04</span>FAQ</a></li>
-      <li><a href="../../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -68,7 +82,7 @@
 
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
-      <div class="spread spread--reverse">
+      <div class="spread spread--reverse" data-reveal-group>
         <div class="spread__body" data-reveal>
           <p class="spread__index" aria-hidden="true">01</p>
           <h2 class="type-h2 spread__title">A compassionate approach.</h2>
@@ -84,8 +98,8 @@
             <li>Post-divorce financial rebuilding</li>
           </ul>
         </div>
-        <figure class="photo photo--portrait spread__media photo--zoom">
-          <img src="../../assets/images/general/collaborative-divorce-candid.webp" alt="Collaborative divorce meeting in progress" loading="lazy">
+        <figure class="photo photo--portrait spread__media photo--zoom" data-reveal>
+          <img class="tone-muted" src="../../assets/images/general/collaborative-divorce-candid.webp" alt="Collaborative divorce meeting in progress" loading="lazy">
           <figcaption class="photo__overlay"><span class="photo__overlay-label">Collaborative Divorce</span><span class="photo__overlay-meta">Fig. 01</span></figcaption>
         </figure>
       </div>
@@ -94,11 +108,11 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="running-head">
+      <div class="running-head" data-reveal>
         <span class="running-head__num">02</span><span class="running-head__label">PlanThruDivorce</span>
         <span class="running-head__rule"></span><span class="running-head__end">Structured process</span>
       </div>
-      <div class="section-lead">
+      <div class="section-lead" data-reveal>
         <h2 class="type-h2">Evaluate decisions<br><span class="tone-2">before they become permanent.</span></h2>
         <p class="section-lead__support">A structured process designed to help clients — and their advisors — work through financial decisions in order.</p>
       </div>
@@ -116,9 +130,9 @@
   </section>
 
   <section class="section cta section--dark">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Considering the collaborative process?</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">We work with attorneys throughout Texas to help you stay out of court.</p>
         <a href="../../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -136,7 +150,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../../services/index.html">Services</a></li>
+        <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../../services/collaborative-divorce/index.html" aria-current="page">Collaborative Divorce</a></li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>

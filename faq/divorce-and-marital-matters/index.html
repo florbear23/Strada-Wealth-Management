@@ -18,9 +18,16 @@
     <a href="../../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../../faq/index.html" aria-current="page">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>
         <li><a href="../../about/index.html">About</a></li>
         <li><a href="../../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../../index.html"><span>01</span>Home</a></li>
-      <li><a href="../../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../../faq/index.html" aria-current="page"><span>04</span>FAQ</a></li>
-      <li><a href="../../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -69,7 +83,7 @@
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
       <ul class="faq-list">
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-01">
             <span class="faq-item__marker" aria-hidden="true">01</span>
             <span class="faq-item__label">What is divorce financial planning?</span>
@@ -79,7 +93,7 @@
             <p>Divorce financial planning involves assessing and planning for the current and future financial implications of divorce. It encompasses asset division, tax considerations, and post-divorce financial stability.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-02">
             <span class="faq-item__marker" aria-hidden="true">02</span>
             <span class="faq-item__label">How can a financial analyst and planner assist in the divorce process?</span>
@@ -89,7 +103,7 @@
             <p>A financial analyst can offer impartial advice on dividing assets, forecast the financial impact of various settlement options, assist in budgeting for post-divorce life, and ensure you’re making informed financial decisions.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-03">
             <span class="faq-item__marker" aria-hidden="true">03</span>
             <span class="faq-item__label">What is a Certified Divorce Financial Analyst (CDFA), and how can they help?</span>
@@ -99,7 +113,7 @@
             <p>A CDFA is a professional skilled in the financial aspects of divorce. They play a crucial role in understanding the long-term effects of proposed divorce settlements, tax implications, and asset division.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-04">
             <span class="faq-item__marker" aria-hidden="true">04</span>
             <span class="faq-item__label">Can a financial planner act as a mediator in my divorce?</span>
@@ -109,7 +123,7 @@
             <p>Yes, financial planners, especially those with mediation certifications, can act as financial neutrals in mediations, helping both parties reach equitable solutions.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-05">
             <span class="faq-item__marker" aria-hidden="true">05</span>
             <span class="faq-item__label">What should I consider financially before filing for divorce?</span>
@@ -119,7 +133,7 @@
             <p>Consider your current financial assets/liabilities, understand your post-divorce budget needs, assess your future earning potential, and contemplate the tax implications of asset division.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-06">
             <span class="faq-item__marker" aria-hidden="true">06</span>
             <span class="faq-item__label">What are the financial implications of keeping the family home in a divorce?</span>
@@ -129,7 +143,7 @@
             <p>Retaining the family home can impact liquidity, future income needs, maintenance costs, and property taxes.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-07">
             <span class="faq-item__marker" aria-hidden="true">07</span>
             <span class="faq-item__label">How are retirement accounts divided in a divorce?</span>
@@ -139,7 +153,7 @@
             <p>Retirement accounts are often considered marital property and may be divided using a Qualified Domestic Relations Order (QDRO).</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-08">
             <span class="faq-item__marker" aria-hidden="true">08</span>
             <span class="faq-item__label">What’s the difference between marital and separate property?</span>
@@ -149,7 +163,7 @@
             <p>Marital property is assets acquired during the marriage, while separate property is assets owned before marriage or received as a gift/inheritance.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-09">
             <span class="faq-item__marker" aria-hidden="true">09</span>
             <span class="faq-item__label">Can a financial planner help with child support and alimony calculations?</span>
@@ -159,7 +173,7 @@
             <p>Yes, a financial planner can provide a detailed analysis of financial needs and affordability, helping to inform negotiations on child support and alimony.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-10">
             <span class="faq-item__marker" aria-hidden="true">10</span>
             <span class="faq-item__label">What tax considerations should I be aware of in a divorce?</span>
@@ -169,7 +183,7 @@
             <p>Considerations include the tax implications of splitting joint assets, tax filing status, and potential capital gains taxes on the sale of marital property.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-11">
             <span class="faq-item__marker" aria-hidden="true">11</span>
             <span class="faq-item__label">How do I financially prepare for life after divorce?</span>
@@ -179,7 +193,7 @@
             <p>Develop a new budget, adjust your retirement planning, review your estate plan, and update beneficiaries on insurance policies and retirement accounts.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-12">
             <span class="faq-item__marker" aria-hidden="true">12</span>
             <span class="faq-item__label">Should I update my estate plan during or after my divorce?</span>
@@ -189,7 +203,7 @@
             <p>Yes, it’s important to review your estate plan both during and update it after the divorce process to ensure it reflects your current wishes and new legal status.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-13">
             <span class="faq-item__marker" aria-hidden="true">13</span>
             <span class="faq-item__label">How can I ensure financial fairness in a collaborative divorce?</span>
@@ -199,7 +213,7 @@
             <p>Working with a financial neutral and ensuring full financial disclosure from both parties can help achieve a fair and equitable outcome.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-14">
             <span class="faq-item__marker" aria-hidden="true">14</span>
             <span class="faq-item__label">What happens to joint debts in a divorce?</span>
@@ -209,7 +223,7 @@
             <p>Joint debts must be addressed in the divorce settlement. It’s common for debts to be divided in a manner similar to assets, but remember that creditors may still hold both parties responsible for joint debts.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-15">
             <span class="faq-item__marker" aria-hidden="true">15</span>
             <span class="faq-item__label">Why might I need a post-divorce financial plan?</span>
@@ -219,7 +233,7 @@
             <p>A post-divorce financial plan helps you adjust to your new financial reality, ensuring you have a strategy in place to meet your goals and maintain financial stability.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-16">
             <span class="faq-item__marker" aria-hidden="true">16</span>
             <span class="faq-item__label">How does divorce affect my insurance needs?</span>
@@ -229,7 +243,7 @@
             <p>You may need to update policies, reconsider beneficiaries, and potentially secure new coverage to account for your changed circumstances and obligations.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-17">
             <span class="faq-item__marker" aria-hidden="true">17</span>
             <span class="faq-item__label">What financial records do I need to gather for my divorce?</span>
@@ -239,7 +253,7 @@
             <p>Collect records of all assets, debts, tax returns, income sources, insurance policies, estate plans, and any other relevant financial documentation.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-18">
             <span class="faq-item__marker" aria-hidden="true">18</span>
             <span class="faq-item__label">How can a financial planner help with a prenuptial or postnuptial agreement?</span>
@@ -249,7 +263,7 @@
             <p>A financial planner can provide clarity on your financial situation, helping to inform the creation of a comprehensive agreement that protects both parties’ interests.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="div-19">
             <span class="faq-item__marker" aria-hidden="true">19</span>
             <span class="faq-item__label">Is divorce planning only for those with high net worth?</span>
@@ -265,13 +279,13 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="card-grid card-grid--2">
-        <a class="card" href="../../faq/financial-planning/index.html">
+      <div class="card-grid card-grid--2" data-reveal-group>
+        <a class="card" href="../../faq/financial-planning/index.html" data-reveal>
           <span class="meta card__eyebrow">Previous</span>
           <h2 class="type-h3 card__title">Financial &amp; Retirement Planning</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
-        <a class="card" href="../../faq/collaborative-divorce/index.html">
+        <a class="card" href="../../faq/collaborative-divorce/index.html" data-reveal>
           <span class="meta card__eyebrow">Next</span>
           <h2 class="type-h3 card__title">Collaborative Divorce</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
@@ -281,9 +295,9 @@
   </section>
 
   <section class="section cta section--dark">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Still have questions?</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Some things are easier to talk through than read.</p>
         <a href="../../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -301,7 +315,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../../services/index.html">Services</a></li>
+        <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>

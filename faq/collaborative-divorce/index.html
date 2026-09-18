@@ -18,9 +18,16 @@
     <a href="../../index.html" class="site-header__logo">Strada</a>
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
-        <li><a href="../../services/index.html">Services</a></li>
+        <li class="nav-dropdown-item">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown__summary">Services<span class="nav-dropdown__caret" aria-hidden="true"></span></summary>
+            <div class="nav-dropdown__panel">
+              <a href="../../services/financial-planning/index.html">Financial Planning</a>
+              <a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a>
+            </div>
+          </details>
+        </li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
-        <li><a href="../../faq/index.html" aria-current="page">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>
         <li><a href="../../about/index.html">About</a></li>
         <li><a href="../../contact/index.html">Contact</a></li>
@@ -40,12 +47,19 @@
   <nav aria-label="Mobile">
     <ul class="mobile-nav__list">
       <li><a href="../../index.html"><span>01</span>Home</a></li>
-      <li><a href="../../services/index.html"><span>02</span>Services</a></li>
+      <li>
+        <details class="mobile-nav__dropdown">
+          <summary><span>02</span>Services<span class="mobile-nav__caret" aria-hidden="true"></span></summary>
+          <ul class="mobile-nav__submenu">
+            <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+            <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="../../for-attorneys/index.html"><span>03</span>For Attorneys</a></li>
-      <li><a href="../../faq/index.html" aria-current="page"><span>04</span>FAQ</a></li>
-      <li><a href="../../blog/index.html"><span>05</span>Blog</a></li>
-      <li><a href="../../about/index.html"><span>06</span>About</a></li>
-      <li><a href="../../contact/index.html"><span>07</span>Contact</a></li>
+      <li><a href="../../blog/index.html"><span>04</span>Blog</a></li>
+      <li><a href="../../about/index.html"><span>05</span>About</a></li>
+      <li><a href="../../contact/index.html"><span>06</span>Contact</a></li>
     </ul>
   </nav>
   <div class="mobile-nav__foot">
@@ -69,7 +83,7 @@
   <section class="section section--white section--flush-top" style="padding-top:clamp(2rem,4vw,3rem);">
     <div class="container">
       <ul class="faq-list">
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-01">
             <span class="faq-item__marker" aria-hidden="true">01</span>
             <span class="faq-item__label">What is a collaborative law financial neutral?</span>
@@ -79,7 +93,7 @@
             <p>A collaborative law financial neutral is a professional who assists both parties in a collaborative divorce by providing objective financial analysis and advice, without representing either side.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-02">
             <span class="faq-item__marker" aria-hidden="true">02</span>
             <span class="faq-item__label">How does Jennifer Failla serve as a financial neutral in my divorce?</span>
@@ -89,7 +103,7 @@
             <p>Jennifer provides impartial financial expertise, analyzing your combined financial situation, helping identify and value assets, and forecasting the long-term implications of settlement options to facilitate equitable decisions.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-03">
             <span class="faq-item__marker" aria-hidden="true">03</span>
             <span class="faq-item__label">What qualifications does a financial neutral have?</span>
@@ -99,7 +113,7 @@
             <p>A financial neutral typically holds certifications such as a Certified Divorce Financial Analyst (CDFA), Certified Financial Planner (CFP), or Certified Public Accountant (CPA) with specialized training in collaborative divorce processes.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-04">
             <span class="faq-item__marker" aria-hidden="true">04</span>
             <span class="faq-item__label">Why is a financial neutral important in collaborative divorce?</span>
@@ -109,7 +123,7 @@
             <p>A financial neutral ensures that financial decisions are made based on objective analysis and understanding, helping couples reach fair and sustainable agreements while minimizing emotional conflict.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-05">
             <span class="faq-item__marker" aria-hidden="true">05</span>
             <span class="faq-item__label">How can a financial neutral help with asset division?</span>
@@ -119,7 +133,7 @@
             <p>They provide a clear picture of the couple’s finances, suggest equitable ways to split assets considering future needs, and explain the tax implications of various division scenarios.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-06">
             <span class="faq-item__marker" aria-hidden="true">06</span>
             <span class="faq-item__label">Can a financial neutral help determine spousal or child support?</span>
@@ -129,7 +143,7 @@
             <p>Yes, by analyzing incomes, living expenses, and future needs, a financial neutral can project feasible support scenarios for consideration in the collaborative process.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-07">
             <span class="faq-item__marker" aria-hidden="true">07</span>
             <span class="faq-item__label">What kind of financial information do I need to provide?</span>
@@ -139,7 +153,7 @@
             <p>You’ll need to share comprehensive financial data, including income sources, bank statements, investments, property values, debts, and any other relevant financial documents.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-08">
             <span class="faq-item__marker" aria-hidden="true">08</span>
             <span class="faq-item__label">Does working with a financial neutral speed up the divorce process?</span>
@@ -149,7 +163,7 @@
             <p>Yes, by clarifying financial matters upfront and facilitating rational decision-making, a financial neutral can help avoid the delays often associated with financial disagreements in divorce.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-09">
             <span class="faq-item__marker" aria-hidden="true">09</span>
             <span class="faq-item__label">How does a financial neutral impact the cost of divorce?</span>
@@ -159,7 +173,7 @@
             <p>Employing a financial neutral can ultimately reduce costs by streamlining the financial aspect of the divorce, avoiding prolonged disputes and potential litigation.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-10">
             <span class="faq-item__marker" aria-hidden="true">10</span>
             <span class="faq-item__label">Will I still need a divorce attorney if we use a financial neutral?</span>
@@ -169,7 +183,7 @@
             <p>Yes, a financial neutral complements the legal advice from your attorneys by focusing on the financial aspects, ensuring you’re fully informed when making decisions.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-11">
             <span class="faq-item__marker" aria-hidden="true">11</span>
             <span class="faq-item__label">Can a financial neutral provide tax advice related to divorce?</span>
@@ -179,7 +193,7 @@
             <p>While financial neutrals can outline potential tax implications of divorce decisions, specific tax advice should be verified with a qualified tax professional or preparer.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-12">
             <span class="faq-item__marker" aria-hidden="true">12</span>
             <span class="faq-item__label">How does the financial neutral work with my divorce attorney?</span>
@@ -189,7 +203,7 @@
             <p>The financial neutral collaboratively works with both parties’ attorneys, ensuring financial analyses and proposals align with legal strategies and client interests.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-13">
             <span class="faq-item__marker" aria-hidden="true">13</span>
             <span class="faq-item__label">Can I work with a financial neutral if we’re not pursuing a collaborative divorce?</span>
@@ -199,7 +213,7 @@
             <p>Yes, financial neutrals can provide valuable financial advice in various types of divorce processes, though their role is optimized in the collaborative framework.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-14">
             <span class="faq-item__marker" aria-hidden="true">14</span>
             <span class="faq-item__label">What happens if we reach an impasse on financial issues?</span>
@@ -209,7 +223,7 @@
             <p>The financial neutral can present alternative scenarios, facilitate discussions to uncover underlying concerns, and help find creative solutions to break the deadlock.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-15">
             <span class="faq-item__marker" aria-hidden="true">15</span>
             <span class="faq-item__label">How are retirement accounts handled in a collaborative divorce?</span>
@@ -219,7 +233,7 @@
             <p>The financial neutral analyzes current values, tax impacts, and future growth to recommend equitable ways to divide retirement accounts.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-16">
             <span class="faq-item__marker" aria-hidden="true">16</span>
             <span class="faq-item__label">Does a financial neutral determine who gets the family home?</span>
@@ -229,7 +243,7 @@
             <p>They do not decide, but can provide analyses on the affordability and financial impact of keeping the home versus selling it, aiding in informed decision-making.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-17">
             <span class="faq-item__marker" aria-hidden="true">17</span>
             <span class="faq-item__label">What if my spouse hides assets? Can a financial neutral help?</span>
@@ -239,7 +253,7 @@
             <p>Financial neutrals are adept at analyzing financial disclosures and identifying inconsistencies or gaps, but a forensic accountant may be needed for in-depth investigation of hidden assets.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-18">
             <span class="faq-item__marker" aria-hidden="true">18</span>
             <span class="faq-item__label">How confidential is the information I share with a financial neutral?</span>
@@ -249,7 +263,7 @@
             <p>All information shared with a financial neutral is treated with strict confidentiality within the bounds of the collaborative divorce process and applicable laws.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-19">
             <span class="faq-item__marker" aria-hidden="true">19</span>
             <span class="faq-item__label">Can a financial neutral assist with estate planning post-divorce?</span>
@@ -259,7 +273,7 @@
             <p>After divorce, financial neutrals can help reassess your financial situation and guide the updating of your estate plan to reflect your new status and goals.</p>
           </div></div></div>
         </li>
-        <li class="faq-item">
+        <li class="faq-item" data-reveal>
           <button class="faq-item__q" aria-expanded="false" aria-controls="col-20">
             <span class="faq-item__marker" aria-hidden="true">20</span>
             <span class="faq-item__label">How can I start working with Jennifer Failla as a financial neutral?</span>
@@ -275,13 +289,13 @@
 
   <section class="section section--paper">
     <div class="container">
-      <div class="card-grid card-grid--2">
-        <a class="card" href="../../faq/divorce-and-marital-matters/index.html">
+      <div class="card-grid card-grid--2" data-reveal-group>
+        <a class="card" href="../../faq/divorce-and-marital-matters/index.html" data-reveal>
           <span class="meta card__eyebrow">Previous</span>
           <h2 class="type-h3 card__title">Divorce &amp; Marital Matters</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
         </a>
-        <a class="card" href="../../faq/for-attorneys/index.html">
+        <a class="card" href="../../faq/for-attorneys/index.html" data-reveal>
           <span class="meta card__eyebrow">Next</span>
           <h2 class="type-h3 card__title">For Attorneys</h2>
           <span class="card__link">View category <span class="arrow" aria-hidden="true">→</span></span>
@@ -291,9 +305,9 @@
   </section>
 
   <section class="section cta section--dark">
-    <div class="container">
+    <div class="container" data-reveal-group>
       <h2 class="cta__title" data-reveal>Still have questions?</h2>
-      <div class="cta__foot">
+      <div class="cta__foot" data-reveal>
         <p class="lede mt-0">Some things are easier to talk through than read.</p>
         <a href="../../consultation/index.html" class="link-xl">Book a Consultation <span class="link-xl__arrow" aria-hidden="true">→</span></a>
       </div>
@@ -311,7 +325,8 @@
     <nav class="site-footer__col" aria-label="Site">
       <span class="meta">Site</span>
       <ul>
-        <li><a href="../../services/index.html">Services</a></li>
+        <li><a href="../../services/financial-planning/index.html">Financial Planning</a></li>
+        <li><a href="../../services/collaborative-divorce/index.html">Collaborative Divorce</a></li>
         <li><a href="../../for-attorneys/index.html">For Attorneys</a></li>
         <li><a href="../../faq/index.html">FAQ</a></li>
         <li><a href="../../blog/index.html">Blog</a></li>
